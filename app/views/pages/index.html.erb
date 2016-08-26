@@ -1,0 +1,73 @@
+<div class="row welcome-row">
+  <center>
+  <h1 class="large-header"><%= @title %></h1>
+  <h5><%= @subtitle %></h5>
+  </center>
+</div>
+<div class="row" id="about-me">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+    <center><h2>Who Am I?</h2></center>
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">
+        <center><img src="https://avatars3.githubusercontent.com/u/7366444?v=3&s=460" class="profile-image img-circle" alt="tmobaird"></center>
+        </h4>
+        <p class="card-text">My name is Thomas Baird and I was born, raised, and am currently living in Alexandria, VA. I am a 22 year old software engineer for Booz Allen Hamilton with a strong passion for building software, especially with Ruby and Ruby on Rails. </p>
+        <center>
+        <a href="#" class="icon-image"><%= image_tag("github.png", class:"icon-image") %></a>
+        <a href="#" class="icon-image"><%= image_tag("twitter.png", class:"icon-image") %></a>
+        <a href="#" class="icon-image"><%= image_tag("linkedin.png", class:"icon-image") %></a>
+        <a href="#" class="icon-image"><%= image_tag("youtube.png", class:"icon-image") %></a>
+        </center>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+<div class="row section-row bottom-border" id="projects">
+  <center><h1 class="medium-header">Projects</h1></center>
+  <!-- Need to make this render a partial for an array of project objects -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">
+          <center>Guidebox Wrapper <%= image_tag("ruby.png", class:"project-image img-rounded") %></center>
+          </h4>
+          <p class="card-text">My name is Thomas Baird and I was born, raised, and am currently living in Alexandria, VA. I am a 22 year old software engineer for Booz Allen Hamilton with a strong passion for building software, especially with Ruby and Ruby on Rails. </p>
+          <center>
+          <a href="#" class="icon-image"><%= image_tag("github.png", class:"icon-image") %></a>
+          <a href="#" class="icon-image"><%= image_tag("cursor.png", class:"icon-image") %></a>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">
+          <center>Words&Moves <%= image_tag("wandm.png", class:"project-image img-rounded") %></center>
+          </h4>
+          <p class="card-text">My name is Thomas Baird and I was born, raised, and am currently living in Alexandria, VA. I am a 22 year old software engineer for Booz Allen Hamilton with a strong passion for building software, especially with Ruby and Ruby on Rails. </p>
+          <center>
+          <a href="#" class="icon-image"><%= image_tag("github.png", class:"icon-image") %></a>
+          <a href="#" class="icon-image"><%= image_tag("cursor.png", class:"icon-image") %></a>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" id="contact-me">
+  <center><h1 class="small-header">Contact Me!</h1></center>
+  <p> I generally work 9-5 Monday - Friday, but I am definitely open and have time to contribute to other projects outside of my regular work day.</p>
+  <p>If you would like to contact me for any reason, you can reach out to me at the following:
+    <ul>
+      <li><a href="#">tmobaird@gmail.com</a></li>
+    </ul>
+  </p>
+</div>

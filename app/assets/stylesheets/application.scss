@@ -1,0 +1,43 @@
+@import "bootstrap";
+@import "_variables";
+@import "_navbar";
+
+
+#contact-me {
+  background-color: $blue-green;
+  color: black;
+}
+
+.main-container {
+  margin-top: -10px;
+  * {
+    padding: 5px;
+  }
+}
+
+.title {
+  color: $prime-blue;
+}
+
+.large-header {
+  font-size: 15vw;
+}
+.medium-header {
+  font-size: 10vw;
+  color: $prime-blue;
+}
+.small-header {
+  font-size: 5vw;
+}
+.welcome-row {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $prime-blue;
+  color: white;
+}
+
+.section-row {
+  padding: 15px;
+  border-top: 0.25px solid black;
+}
+
