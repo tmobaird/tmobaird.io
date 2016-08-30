@@ -7,8 +7,13 @@
           ☰
         </button>
         </div>
-        <div class="col-xs-10">
-        <h2 class="title">Tmobaird.io</h2>
+        <div class="col-xs-9">
+          <h2 class="title">Tmobaird.io</h2>
+        </div>
+        <div class="col-xs-2">
+          <% unless current_admin.blank? %>
+            <%= link_to("Sign Out", destroy_admin_session_path, class: "btn btn-primary", method: :delete) %>
+          <% end %>
         </div>
       </div>
     </div>     
@@ -16,10 +21,13 @@
   <div class="collapse" id="navbar-header">
     <div class="bg-dark-blue p-l-1">
       <div class="container-fluid">
-        <a class="menu-item" href="#about-me"><div class="row menu-row bottom-border-white">About Me</div></a>
-        <a class="menu-item" href="#projects"><div class="row menu-row bottom-border-white">Projects</div></a>
+        <% if request.path != "/" %>
+        <a class="menu-item" href="<%= root_url%>"><div class="row menu-row bottom-border-white">Home</div></a>
+        <% end %>
+        <a class="menu-item" href="<%= root_url%>#about-me"><div class="row menu-row bottom-border-white">About Me</div></a>
+        <a class="menu-item" href="<%= root_url%>#projects"><div class="row menu-row bottom-border-white">Projects</div></a>
         <a class="menu-item" href="#blog"><div class="row menu-row bottom-border-white">My Blog</div></a>
-        <a class="menu-item" href="#contact-me"><div class="row menu-row">Contact</div></a>
+        <a class="menu-item" href="<%= root_url%>#contact-me"><div class="row menu-row">Contact</div></a>
       </div>
     </div>
   </div>
