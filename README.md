@@ -1,4 +1,6 @@
-# README
+# Tmobaird.io
+
+[![Build Status](https://travis-ci.org/tmobaird/tmobaird.io.svg?branch=master)](https://travis-ci.org/tmobaird/tmobaird.io)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
