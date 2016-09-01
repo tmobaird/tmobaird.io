@@ -3,6 +3,10 @@ rvm:
   - 2.3.0
   - 2.2.0
 
+script:
+  - bundle exec rails db:drop db:create db:migrate
+  - bundle exec rspec
+cache: bundler
 services:
   - postgresql
 addons:
