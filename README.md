@@ -1,6 +1,7 @@
 # Tmobaird.io
 
 [![Build Status](https://travis-ci.org/tmobaird/tmobaird.io.svg?branch=master)](https://travis-ci.org/tmobaird/tmobaird.io)
+[![Coverage Status](https://coveralls.io/repos/github/tmobaird/tmobaird.io/badge.svg?branch=master)](https://coveralls.io/github/tmobaird/tmobaird.io?branch=master)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
