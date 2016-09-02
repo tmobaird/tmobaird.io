@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "_variables";
 @import "_navbar";
+@import "_bootstrap-overrides";
+@import "_footer";
 
 
 #contact-me {
@@ -38,6 +40,9 @@
 
 .section-row {
   padding: 15px;
-  border-top: 0.25px solid black;
+  border-top: 0.25px solid $blue-green;
 }
 
+.footer-separator {
+  width: 300px;
+}

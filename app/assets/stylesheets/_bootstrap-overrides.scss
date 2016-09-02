@@ -1,0 +1,40 @@
+.btn-success {
+  background-color: $blue-green;
+  border-color: $blue-green;
+}
+
+.btn-primary {
+  background-color: $blue-teal;
+  border-color: $blue-teal;
+}
+
+.btn-info {
+  background-color: $prime-blue;
+    border-color: $prime-blue;
+
+}
+
+.btn-warning {
+  background-color: $blue;
+  border-color: $blue;
+}
+
+.btn-success:hover {
+  background-color: #00e6ac;
+  border-color: #00e6ac;
+}
+
+.btn-primary:hover {
+  background-color: #12c1c4;
+  border-color: #12c1c4;
+}
+
+.btn-info:hover {
+  background-color: #00a1e0;
+  border-color: #00a1e0;
+}
+
+.btn-warning:hover {
+  background-color: #1365c9;
+  border-color: #1365c9;
+}
