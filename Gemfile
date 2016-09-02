@@ -48,6 +48,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'rails-controller-testing'
 end
 
 group :development do

@@ -1,0 +1,27 @@
+<div class="col-md-<%= size %>">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">
+        <center><%= project.title %></center>
+      </h4>
+      <p class="card-text"><%= project.description %></p>
+      <center>
+        <% unless project.github_url.blank? %>
+          <a href="<%= project.github_url %>" class="icon-image"><%= image_tag("github.png", class:"icon-image") %></a>
+        <% end %>
+        <% unless project.app_url.blank? %>
+          <a href="<%= project.app_url %>" class="icon-image"><%= image_tag("cursor.png", class:"icon-image") %></a>
+        <% end %>
+        <div class="row">
+          <% unless current_admin.blank? %>
+            <center> 
+              <%= link_to 'Show', project %>
+              <%= link_to 'Edit', edit_project_path(project) %>
+              <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </center>
+          <% end %>
+        </div>
+      </center>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<h1>Projects</h1>
+  <div class="row">
+    <% @projects.each do |project| %>
+      <%= render "projects/project_card", project: project, size: 4 %>
+    <% end %>
+  </div>
+<br>
+
+<%= link_to 'New Project', new_project_path %>
