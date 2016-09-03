@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/tmobaird/tmobaird.io.svg?branch=master)](https://travis-ci.org/tmobaird/tmobaird.io)
 [![Coverage Status](https://coveralls.io/repos/github/tmobaird/tmobaird.io/badge.svg?branch=master)](https://coveralls.io/github/tmobaird/tmobaird.io?branch=master)
 
-[![Heroku](https://heroku-badge.herokuapp.com/?app=tmobaird)](https://tmobaird.io)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=tmobaird)](http://tmobaird.io)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
