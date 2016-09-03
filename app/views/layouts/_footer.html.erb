@@ -5,7 +5,7 @@
         <a class="btn btn-sm btn-success" href="<%= root_url%>#about-me">About Me</a>
         <a class="btn btn-sm btn-primary" href="<%= root_url%>#projects">Projects</a>
         <a class="btn btn-sm btn-info" href="<%= root_url%>#">Blog</a>
-        <a class="btn btn-sm btn-warning" href="<%= root_url%>#">Contact</a>
+        <a class="btn btn-sm btn-warning" href="<%= root_url%>contact">Contact</a>
       </div>
       <hr class="footer-separator" />
       <div class="row">
@@ -16,7 +16,11 @@
           <a href="#"><%= image_tag("youtube.png", class:"social-image") %></a>
         </div>
         <div class="row">
-          <small>tmobaird.io &#x2027; Back to Top &#x2027; Created with Ruby on Rails </small><%= image_tag("rails.png", style: "height: 30px; width: 30px;") %>
+          <small class="primary-text">
+          tmobaird.io &#x2027; 
+          <a href="#top">Back to Top</a> &#x2027; 
+          <a href="http://fortune.com/2014/10/30/the-rocks-best-advice-for-success/">#HWitR</a> &#x2027; 
+          <a href="http://rubyonrails.org/">Created with Ruby on Rails </small><%= image_tag("rails.png", style: "height: 30px; width: 30px;") %></a>
         </div>
       </div>
     </center>

@@ -8,11 +8,11 @@
         </button>
         </div>
         <div class="col-xs-9">
-          <h2 class="title">Tmobaird.io</h2>
+          <h2 class="title"><a href="<%= root_url%>">Tmobaird.io</a></h2>
         </div>
         <div class="col-xs-2">
           <% unless current_admin.blank? %>
-            <%= link_to("Sign Out", destroy_admin_session_path, class: "btn btn-primary", method: :delete) %>
+            <%= link_to("Sign Out", destroy_admin_session_path, class: "btn btn-info", method: :delete) %>
           <% end %>
         </div>
       </div>
@@ -27,7 +27,7 @@
         <a class="menu-item" href="<%= root_url%>#about-me"><div class="row menu-row bottom-border-white">About Me</div></a>
         <a class="menu-item" href="<%= root_url%>#projects"><div class="row menu-row bottom-border-white">Projects</div></a>
         <a class="menu-item" href="#blog"><div class="row menu-row bottom-border-white">My Blog</div></a>
-        <a class="menu-item" href="<%= root_url%>#contact-me"><div class="row menu-row">Contact</div></a>
+        <a class="menu-item" href="<%= root_url%>contact"><div class="row menu-row">Contact</div></a>
       </div>
     </div>
   </div>

@@ -3,4 +3,7 @@ class PagesController < ApplicationController
     @title = "Welcome!"
     @subtitle = "\"If at first you don't succeed, call it version 1.0.\""
   end
+
+  def contact
+  end
 end
