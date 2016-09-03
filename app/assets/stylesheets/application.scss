@@ -5,6 +5,12 @@
 @import "_footer";
 
 
+.primary-text {
+  color: $prime-blue;
+  a {
+    color: $prime-blue;
+  }
+}
 #contact-me {
   background-color: $blue-green;
   color: black;
@@ -19,6 +25,13 @@
 
 .title {
   color: $prime-blue;
+  a {
+    color: $prime-blue;
+  }
+  a:hover {
+    color: $blue;
+    text-decoration: none;
+  }
 }
 
 .large-header {

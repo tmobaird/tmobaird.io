@@ -8,6 +8,13 @@ body {
 
 }
 
+// Optional for navbar shadow
+// .navbar {
+//   -webkit-box-shadow: 0 2px 30px -6px #999;
+//   -moz-box-shadow: 0 2px 30px -6px #999;
+//   box-shadow: 0 2px 30px -6px #999;
+// }
+
 a.menu-item:hover {
   text-decoration: none;
 }
@@ -61,4 +68,13 @@ a.menu-item:hover {
 
 .icon-image:hover {
   opacity: 0.7
+}
+
+.large-icon-image {
+  height: 125px;
+  width: 125px;
+}
+
+.large-icon-image:hover {
+  opacity: 0.7;
 }
