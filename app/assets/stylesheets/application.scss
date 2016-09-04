@@ -4,6 +4,9 @@
 @import "_bootstrap-overrides";
 @import "_footer";
 
+.hidden {
+  display: none
+}
 
 .primary-text {
   color: $prime-blue;

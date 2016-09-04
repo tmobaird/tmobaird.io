@@ -1,13 +1,13 @@
 <div class="row welcome-row">
   <center>
-  <h1 class="large-header"><%= @title %></h1>
-  <h5><%= @subtitle %></h5>
+  <h1 class="large-header hidden"><%= @title %></h1>
+  <h5 class="hidden" id="subtitle" ><%= @subtitle %></h5>
   </center>
 </div>
 <div class="row" id="about-me">
   <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
     <center><h2>Who Am I?</h2></center>
     <div class="card">
       <div class="card-block">
@@ -24,7 +24,7 @@
       </div>
     </div>
     </div>
-    <div class="col-md-3"></div>
+    <div class="col-lg-3"></div>
   </div>
 </div>
 <div class="row section-row bottom-border" id="projects">
@@ -37,7 +37,7 @@
           <h4 class="card-title">
           <center>Guidebox Wrapper <%= image_tag("ruby.png", class:"project-image img-rounded") %></center>
           </h4>
-          <p class="card-text">My name is Thomas Baird and I was born, raised, and am currently living in Alexandria, VA. I am a 22 year old software engineer for Booz Allen Hamilton with a strong passion for building software, especially with Ruby and Ruby on Rails. </p>
+          <p class="card-text">Guidebox Wrapper is a RubyGem that functions as an api wrapper for the Guidebox API. The Guidebox API is a searchable database of Movie and TV records. This gem allow you to query this API in a quick and efficient way, that requires for the least possible queries to obtain the desired information. </p>
           <center>
           <a href="#" class="icon-image"><%= image_tag("github.png", class:"icon-image") %></a>
           <a href="#" class="icon-image"><%= image_tag("cursor.png", class:"icon-image") %></a>
@@ -52,7 +52,7 @@
           <h4 class="card-title">
           <center>Words&Moves <%= image_tag("wandm.png", class:"project-image img-rounded") %></center>
           </h4>
-          <p class="card-text">My name is Thomas Baird and I was born, raised, and am currently living in Alexandria, VA. I am a 22 year old software engineer for Booz Allen Hamilton with a strong passion for building software, especially with Ruby and Ruby on Rails. </p>
+          <p class="card-text">Words&Moves is a Ruby on Rails application that lists all the popular events that are happening in a given area or region. On top of this it also includes posts related to these events that can serve function as guides or useful information to people that will attend these events. </p>
           <center>
           <a href="#" class="icon-image"><%= image_tag("github.png", class:"icon-image") %></a>
           <a href="#" class="icon-image"><%= image_tag("cursor.png", class:"icon-image") %></a>
