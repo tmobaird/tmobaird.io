@@ -38,3 +38,23 @@
   background-color: #1365c9;
   border-color: #1365c9;
 }
+
+.btn-success:active {
+  background-color: #00e6ac;
+  border-color: #00e6ac;
+}
+
+.btn-primary:active {
+  background-color: #12c1c4;
+  border-color: #12c1c4;
+}
+
+.btn-info:active {
+  background-color: #00a1e0;
+  border-color: #00a1e0;
+}
+
+.btn-warning:active:focus {
+  background-color: #1365c9;
+  border-color: #1365c9;
+}
