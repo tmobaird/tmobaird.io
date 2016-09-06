@@ -58,3 +58,7 @@
   background-color: #1365c9;
   border-color: #1365c9;
 }
+
+.pull-right {
+  float: right !important; // Use of important emulates bootstrap
+}
