@@ -8,21 +8,45 @@
   <div class="row">
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
-    <center><h2>Who Am I?</h2></center>
-    <div class="card">
-      <div class="card-block">
-        <h4 class="card-title">
-        <center><img src="https://avatars3.githubusercontent.com/u/7366444?v=3&s=460" class="profile-image img-circle" alt="tmobaird"></center>
-        </h4>
-        <p class="card-text">My name is Thomas Baird and I was born, raised, and am currently living in Alexandria, VA. I am a 22 year old software engineer for Booz Allen Hamilton with a strong passion for building software, especially with Ruby and Ruby on Rails. </p>
-        <center>
-        <a href="#"><%= image_tag("github.png", class:"icon-image") %></a>
-        <a href="#"><%= image_tag("twitter.png", class:"icon-image") %></a>
-        <a href="#"><%= image_tag("linkedin.png", class:"icon-image") %></a>
-        <a href="#"><%= image_tag("youtube.png", class:"icon-image") %></a>
-        </center>
+      <center><h2>Who Am I?</h2></center>
+      <div class="card" style="padding:0px;">
+        <div class="card-block">
+          <h4 class="card-title">
+          <center><img src="https://avatars3.githubusercontent.com/u/7366444?v=3&s=460" class="profile-image img-circle" alt="tmobaird"></center>
+          </h4>
+          <p class="card-text">
+            <div class="show">
+              <p>My name is Thomas Baird and I was born, raised, and am currently living in Alexandria, VA. I am a 23 year old software engineer for Booz Allen Hamilton with a strong passion for building software, especially with Ruby and Ruby on Rails. </p>
+            </div>
+          <div class="additional-content hidden">
+            <p><strong>Languages</strong>: <br />
+              <% @logos.select { |name| name.include?("/languages/")}.each do |logo| %>
+               <%= image_tag "logos/languages/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
+              <% end %>
+            </p>
+            <p><strong>Frameworks</strong>: <br />
+              <% @logos.select { |name| name.include?("/frameworks/")}.each do |logo| %>
+               <%= image_tag "logos/frameworks/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
+              <% end %>
+            </p>
+            <p><strong>Tools</strong>: <br />
+              <% @logos.select { |name| name.include?("/tools/")}.each do |logo| %>
+               <%= image_tag "logos/tools/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip"  %>
+              <% end %>
+            </p>
+            <center>
+              <hr />
+              <a href="#"><%= image_tag("github.png", class: "icon-image") %></a>
+              <a href="#"><%= image_tag("twitter.png", class: "icon-image") %></a>
+              <a href="#"><%= image_tag("linkedin.png", class: "icon-image") %></a>
+              <a href="#"><%= image_tag("youtube.png", class: "icon-image") %></a>
+            </center>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="btn btn-sm btn-link pull-right show-additional-content">Show More</span>
+        </div>
       </div>
-    </div>
     </div>
     <div class="col-lg-3"></div>
   </div>
@@ -35,7 +59,7 @@
       <div class="card">
         <div class="card-block">
           <h4 class="card-title">
-          <center>Guidebox Wrapper <%= image_tag("ruby.png", class:"project-image img-rounded") %></center>
+          <center>Guidebox Wrapper <%= image_tag("logos/languages/_ruby.png", class:"project-image img-rounded") %></center>
           </h4>
           <p class="card-text">Guidebox Wrapper is a RubyGem that functions as an api wrapper for the Guidebox API. The Guidebox API is a searchable database of Movie and TV records. This gem allow you to query this API in a quick and efficient way, that requires for the least possible queries to obtain the desired information. </p>
           <center>

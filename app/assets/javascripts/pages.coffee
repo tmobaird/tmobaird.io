@@ -2,37 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+# Used to extend main card on about me section
 $(document).on "turbolinks:load", ->
-  header = $('.large-header')
-  subHeader = $('#subtitle')
-  fadeInElement(header,1000)
-  fadeInElement(subHeader,2000)
-  console.log(isOnScreena(header))
+  $(".show-additional-content").on "click", ->
+    button = $(".show-additional-content")
+    content = $(".additional-content")
+    content.slideToggle 500, ->
+      button.text ->
+        if content.is(":visible") then "Collapse" else "Show More"
 
-$(window).on "scroll", ->
-  nav = $('.navbar')
-  header = $('.large-header')
-  if isOnScreena header
-    if nav.hasClass("navbar-shadow")
-      nav.removeClass("navbar-shadow")
-  else
-    if !(nav.hasClass("navbar-shadow"))
-      nav.addClass("navbar-shadow")
-  
-
-fadeInElement = (elem,speed) ->
-  elem.fadeIn(speed)
-  elem.toggleClass("hidden")
-
-isOnScreena = (elem) ->
-  $window = $(window)
-  viewportTop = $window.scrollTop()
-  viewportHeight = $window.height()
-  viewportBottom = viewportTop + viewportHeight
-  $elem = $(elem)
-  top = $elem.offset().top
-  height = $elem.height()
-  bottom = top + height
-  (top >= viewportTop && top < viewportBottom) or
-  (bottom > viewportTop && bottom <= viewportBottom) or
-  (height > viewportHeight && top <= viewportTop && bottom >= viewportBottom)
