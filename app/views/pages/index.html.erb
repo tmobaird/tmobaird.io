@@ -20,16 +20,19 @@
             </div>
           <div class="additional-content hidden">
             <p><strong>Languages</strong>: <br />
+              <%= image_tag "logos/languages/ruby.png", class: "icon-image", title: "Ruby", "data-toggle" => "tooltip" %>
               <% @logos.select { |name| name.include?("/languages/")}.each do |logo| %>
                <%= image_tag "logos/languages/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
               <% end %>
             </p>
             <p><strong>Frameworks</strong>: <br />
+              <%= image_tag "logos/frameworks/ruby_on_rails.png", class: "icon-image", title: "Ruby on Rails", "data-toggle" => "tooltip" %>
               <% @logos.select { |name| name.include?("/frameworks/")}.each do |logo| %>
                <%= image_tag "logos/frameworks/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
               <% end %>
             </p>
             <p><strong>Tools</strong>: <br />
+              <%= image_tag "logos/tools/rspec.png", class: "icon-image", title: "RSpec", "data-toggle" => "tooltip" %>
               <% @logos.select { |name| name.include?("/tools/")}.each do |logo| %>
                <%= image_tag "logos/tools/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip"  %>
               <% end %>
@@ -59,7 +62,7 @@
       <div class="card">
         <div class="card-block">
           <h4 class="card-title">
-          <center>Guidebox Wrapper <%= image_tag("logos/languages/_ruby.png", class:"project-image img-rounded") %></center>
+          <center>Guidebox Wrapper <%= image_tag("logos/languages/ruby.png", class:"project-image img-rounded") %></center>
           </h4>
           <p class="card-text">Guidebox Wrapper is a RubyGem that functions as an api wrapper for the Guidebox API. The Guidebox API is a searchable database of Movie and TV records. This gem allow you to query this API in a quick and efficient way, that requires for the least possible queries to obtain the desired information. </p>
           <center>
