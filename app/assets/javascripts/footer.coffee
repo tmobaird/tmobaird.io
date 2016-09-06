@@ -5,3 +5,4 @@ $(document).on "turbolinks:load", ->
   $('.blog-link').on "click", (e) -> 
     console.log("testing")
     e.preventDefault()
+  $('[data-toggle="tooltip"]').tooltip() 
