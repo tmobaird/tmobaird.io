@@ -16,7 +16,7 @@ RSpec.describe "posts/new", type: :view do
 
       assert_select "input#post_title[name=?]", "post[title]"
 
-      assert_select "textarea#post_body[name=?]", "post[body]"
+      assert_select "trix-editor[input=?]", "post_body_trix_input_post"
     end
   end
 end
