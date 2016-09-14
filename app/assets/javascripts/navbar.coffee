@@ -1,19 +1,27 @@
 $(document).on "turbolinks:load", ->
   header = $('.large-header')
   subHeader = $('#subtitle')
-  fadeInElement(header,1000)
-  fadeInElement(subHeader,2000)
-  console.log(isOnScreena(header))
+  if document.querySelector(".large-header")
+    fadeInElement(header,1000)
+    fadeInElement(subHeader,2000)
+    console.log(isOnScreena(header))
 
 $(window).on "scroll", ->
   nav = $('.navbar')
   header = $('.large-header')
-  if isOnScreena header
+  if document.querySelector(".large-header")
+    if isOnScreena header
+      if nav.hasClass("navbar-shadow")
+        nav.removeClass("navbar-shadow")
+    else
+      if !(nav.hasClass("navbar-shadow"))
+        nav.addClass("navbar-shadow")
+  else if document.body.scrollTop == 0
     if nav.hasClass("navbar-shadow")
-      nav.removeClass("navbar-shadow")
+        nav.removeClass("navbar-shadow")
   else
     if !(nav.hasClass("navbar-shadow"))
-      nav.addClass("navbar-shadow")
+        nav.addClass("navbar-shadow")
 
 
 fadeInElement = (elem,speed) ->

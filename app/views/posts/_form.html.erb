@@ -11,17 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="row">
+    <div class="form-group">
+      <%= f.label :title, class: "col-xs-1 control-label" %>
+      <div class="col-xs-4">
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.trix_editor :body, class: "trix-content" %>
+  <div class="row">
+    <div class="form-group">
+      <%= f.label :body, { hidden: true } %>
+      <%= f.trix_editor :body, class: "trix-content" %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-info" %>
   </div>
 <% end %>

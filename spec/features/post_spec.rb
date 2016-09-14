@@ -6,8 +6,8 @@ RSpec.feature "Posts" do
       post_one = FactoryGirl.create(:post, title: "New Post 1", admin: admin)
       post_two = FactoryGirl.create(:post, title: "New Post 2", admin: admin)
       visit posts_path
-      expect(page).to have_selector("tr", text: "New Post 1")
-      expect(page).to have_selector("tr", text: "New Post 2")
+      expect(page).to have_selector(".post", text: "New Post 1")
+      expect(page).to have_selector(".post", text: "New Post 2")
     end
   end
   context "Auth Required" do
@@ -16,9 +16,9 @@ RSpec.feature "Posts" do
       it "displays post" do
         post_one = FactoryGirl.create(:post, title: "New Post 1", body: "Test Post Body")
         visit post_path(post_one)
-        expect(page).to have_selector("p", text: "Title: New Post 1")
+        expect(page).to have_selector("h1", text: "New Post 1")
         expect(page).to have_selector(".trix-content", text: "Test Post Body")
-        expect(page).to have_selector("p", text: "Admin: #{post_one.admin.full_name}")
+        expect(page).to have_selector("small", text: "by #{post_one.admin.full_name}")
         expect(page).to have_link("Edit")
         expect(page).to have_link("Back")
       end
@@ -30,9 +30,9 @@ RSpec.feature "Posts" do
         execute_script("document.getElementsByTagName('trix-editor')[0].value = 'My New Posts Body'")
         click_button "Create Post"
         expect(page).to have_selector(".alert", text: "Post was successfully created.")
-        expect(page).to have_selector("p", text: "Title: My New Post")
+        expect(page).to have_selector("h1", text: "My New Post")
         expect(page).to have_selector(".trix-content", text: "My New Posts Body")
-        expect(page).to have_selector("p", text: "Admin: #{admin.full_name}")
+        expect(page).to have_selector("small", text: "by #{admin.full_name}")
       end
     end
     describe "Edit Post" do
@@ -42,9 +42,9 @@ RSpec.feature "Posts" do
         fill_in "post[title]", with: "My Updated Post"
         click_button "Update Post"
         expect(page).to have_selector(".alert", text: "Post was successfully updated.")
-        expect(page).to have_selector("p", text: "Title: My Updated Post")
+        expect(page).to have_selector("h1", text: "My Updated Post")
         expect(page).to have_selector(".trix-content", text: "#{post_one.body}")
-        expect(page).to have_selector("p", text: "Admin: #{admin.full_name}")
+        expect(page).to have_selector("small", text: "by #{admin.full_name}")
       end
     end
     describe "Destroy Post", js: true do
