@@ -1,0 +1,33 @@
+<%= form_for(post) do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="form-group">
+      <%= f.label :title, class: "col-xs-1 control-label" %>
+      <div class="col-xs-4">
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <%= f.label :body, { hidden: true } %>
+      <%= f.trix_editor :body, class: "trix-content" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-info" %>
+  </div>
+<% end %>

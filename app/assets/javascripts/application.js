@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require tether
+//= require trix
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
