@@ -8,7 +8,7 @@
     <div class="card post" style="padding:0px;">
       <div class="card-block">
         <div class="card-text">
-          <h2 style="margin-bottom: .25rem; font-size: 2.5rem;"><%= post.title %></h2>
+          <h2 class="post-title"><%= link_to post.title, post_path(post) %></h2>
           <p style="color: #999;"><small><%= post.updated_at.strftime("%B %d, %Y") %> By <%= post.admin.full_name %></small></p>
           <div class="trix-content"><%= post.body.html_safe %></div>
         </div>
