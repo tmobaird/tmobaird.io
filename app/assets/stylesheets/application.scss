@@ -9,6 +9,18 @@
   display: none
 }
 
+.post-title {
+  margin-bottom: .25rem;
+  font-size: 2.5rem;
+  a {
+    color: $prime-blue;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $blue;
+  }
+}
+
 .primary-text {
   color: $prime-blue;
   a {
