@@ -4,23 +4,31 @@
   <p class="lead"> Throughout the posts on here, you will find blurbs about an array of different topics. This is because there are many things in my life that I find interesting, and/or things that I wish when I first encountered them, that I would have had some help with. I do not claim to be a genius. In fact I am no such thing. But I am very passionate about a lot of things. One of which is helping others when I have the opportunity to do so. So don't take the words I write as the <i>be-all and end-all</i> of what I talk about. I'm just putting my thoughts and experiences out on the web. And if just one person finds some benefit from it, then I've done my job.</p>
   <p class="lead">- Thomas Baird</p>
   <hr />
-  <% @posts.each do |post| %>
-    <div class="card post" style="padding:0px;">
-      <div class="card-block">
-        <div class="card-text">
-          <h2 class="post-title"><%= link_to post.title, post_path(post) %></h2>
-          <p style="color: #999;"><small><%= post.updated_at.strftime("%B %d, %Y") %> By <%= post.admin.full_name %></small></p>
-          <div class="trix-content"><%= post.body.html_safe %></div>
+  <% if @posts.count == 0 %>
+    <center>
+      <h3>
+        <small class="text-muted">Sorry! There are no posts yet.</small>
+      </h3>
+    </center>
+  <% else %>
+    <% @posts.each do |post| %>
+      <div class="card post" style="padding:0px;">
+        <div class="card-block">
+          <div class="card-text">
+            <h2 class="post-title"><%= link_to post.title, post_path(post) %></h2>
+            <p style="color: #999;"><small><%= post.updated_at.strftime("%B %d, %Y") %> By <%= post.admin.full_name %></small></p>
+            <div class="trix-content"><%= post.body.html_safe %></div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <% if admin_signed_in? %>
+            <%= link_to 'Edit', edit_post_path(post), class: "btn btn-sm btn-link pull-left" %>
+            <%= link_to 'Destroy', post, method: :delete, class: "btn btn-sm btn-link pull-left", data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          <%= link_to 'Read More', post_path(post), class: "btn btn-sm btn-link pull-right" %>
         </div>
       </div>
-      <div class="card-footer">
-        <% if admin_signed_in? %>
-          <%= link_to 'Edit', edit_post_path(post), class: "btn btn-sm btn-link pull-left" %>
-          <%= link_to 'Destroy', post, method: :delete, class: "btn btn-sm btn-link pull-left", data: { confirm: 'Are you sure?' } %>
-        <% end %>
-        <%= link_to 'Read More', post_path(post), class: "btn btn-sm btn-link pull-right" %>
-      </div>
-    </div>
+    <% end %>
   <% end %>
   <br>
   <div class="row">
