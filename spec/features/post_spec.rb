@@ -1,5 +1,6 @@
 RSpec.feature "Posts" do
   let(:admin) { FactoryGirl.create :admin }
+  before { switch_to_subdomain("blog") }
 
   describe "View Posts" do
     it "displays posts" do
