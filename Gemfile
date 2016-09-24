@@ -28,6 +28,8 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 # Trix Editor
 gem 'trix'
+
+gem 'redcarpet'
 # Kaminari for pagination
 gem 'kaminari'
 # Use Redis adapter to run Action Cable in production

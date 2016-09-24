@@ -3,10 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "turbolinks:load", ->
   console.log("test")
-  cardTexts = $('.card-text .trix-content')
+  cardTexts = $('.card-text .post-body')
   appendText element for element in cardTexts
 
 
 appendText = (elem) ->
-  substring = elem.innerHTML.substring(0,400) + "..."
-  elem.innerHTML = substring
+  if document.querySelector(".post-body").innerHTML.length > 400
+    substring = elem.innerHTML.substring(0,400) + "<br />..."
+    elem.innerHTML = substring
