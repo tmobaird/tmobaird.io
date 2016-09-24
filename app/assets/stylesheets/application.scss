@@ -5,6 +5,11 @@
 @import "_bootstrap-overrides";
 @import "_footer";
 
+// Used for code block syntax highlighting
+pre {
+  background-color: #2D2D2D;
+}
+
 .hidden {
   display: none
 }

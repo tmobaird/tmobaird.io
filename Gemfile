@@ -30,6 +30,8 @@ gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'trix'
 
 gem 'redcarpet'
+
+gem 'markdownjs-rails'
 # Kaminari for pagination
 gem 'kaminari'
 # Use Redis adapter to run Action Cable in production

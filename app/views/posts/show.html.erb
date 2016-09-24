@@ -5,9 +5,9 @@
   <hr />
   <div class="post-body-full"><%= markdown(@post.body) %></div>
   <hr />
-  <%= link_to '< Back', posts_path, class: "btn btn-md btn-primary" %>
+  <%= link_to '< Back', posts_path, class: "btn btn-md btn-outline-primary" %>
   <% if admin_signed_in? %>
-    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-md btn-info" %>
+    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-md btn-outline-info" %>
   <% end %>
 </div>
 <div class="col-md-2"></div>
