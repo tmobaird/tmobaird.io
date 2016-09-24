@@ -28,9 +28,9 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 # Trix Editor
 gem 'trix'
-
+# Markdown Renderer
 gem 'redcarpet'
-
+# Markdown JS Renderer
 gem 'markdownjs-rails'
 # Kaminari for pagination
 gem 'kaminari'
