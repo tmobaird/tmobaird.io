@@ -5,6 +5,15 @@
 @import "_bootstrap-overrides";
 @import "_footer";
 
+// Used for code block syntax highlighting
+pre {
+  background-color: #2D2D2D;
+}
+
+.post-body {
+  padding: 10px;
+}
+
 .hidden {
   display: none
 }

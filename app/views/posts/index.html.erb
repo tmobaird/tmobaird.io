@@ -17,7 +17,7 @@
           <div class="card-text">
             <h2 class="post-title"><%= link_to post.title, post_path(post) %></h2>
             <p style="color: #999;"><small><%= post.updated_at.strftime("%B %d, %Y") %> By <%= post.admin.full_name %></small></p>
-            <div class="trix-content"><%= post.body.html_safe %></div>
+            <div class="post-body"><%= markdown(post.body) %></div>
           </div>
         </div>
         <div class="card-footer">
@@ -33,13 +33,13 @@
   <br>
   <div class="row">
     <div class="btn-group pull-right">
-      <%= link_to_previous_page @posts, '< Newer Posts', class: "btn btn-sm btn-outline-primary" %>
-      <%= link_to_next_page @posts, 'Older Posts >', class: "btn btn-sm btn-outline-primary" %>
+      <%= link_to_previous_page @posts, '< Newer Posts', class: "btn btn-sm btn-outline-info" %>
+      <%= link_to_next_page @posts, 'Older Posts >', class: "btn btn-sm btn-outline-info" %>
     </div>
   </div>
   <hr />
   <% if admin_signed_in? %>
-    <%= link_to 'New Post', new_post_path %>
+    <%= link_to 'New Post', new_post_path, class: "btn btn-md btn-outline-primary" %>
   <% end %>
 </div>
 <div class="col-md-1"></div>

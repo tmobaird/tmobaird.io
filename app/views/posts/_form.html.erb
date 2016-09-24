@@ -21,13 +21,22 @@
   </div>
 
   <div class="row">
-    <div class="form-group">
-      <%= f.label :body, { hidden: true } %>
-      <%= f.trix_editor :body, class: "trix-content" %>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link active" id="write-tab" href="#write-display" data-toggle="tab">Write</a></li>
+      <li class="nav-item"><a class="nav-link" id="view-tab" href="#view-display" data-toggle="tab">Preview</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade in active" id="write-display">
+        <div class="form-group">
+          <%= f.label :body, { hidden: true } %>
+          <%= f.text_area :body, class: "form-control", rows: "10", id: "post-body-form" %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="view-display"></div>
     </div>
   </div>
 
   <div class="actions">
-    <%= f.submit class: "btn btn-info" %>
+    <%= f.submit class: "btn btn-md btn-outline-info" %>
   </div>
 <% end %>
