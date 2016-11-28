@@ -50,6 +50,7 @@ pre {
 
 .title {
   color: $prime-blue;
+  font-family: 'Open Sans', sans-serif;
   a {
     color: $prime-blue;
   }
@@ -83,4 +84,26 @@ pre {
 
 .footer-separator {
   width: 300px;
+}
+
+.post-body-full {
+  font-family: 'Open Sans', sans-serif;
+  color: #3B3B3B;
+  line-height: 180%;
+}
+
+.post-body {
+  font-family: 'Open Sans', sans-serif;
+  color: #3B3B3B;
+  line-height: 180%;
+}
+
+.light-text {
+  color: #6E6E6E;
+}
+
+.post-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #242424;
 }

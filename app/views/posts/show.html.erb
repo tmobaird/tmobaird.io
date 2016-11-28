@@ -1,7 +1,7 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
-  <h1><%= @post.title %></h1>
-  <small>Posted on: <%= @post.updated_at.strftime("%B %e, %Y") %> by <%= @post.admin.full_name %></small>
+  <h1 class="post-title"><%= @post.title %></h1>
+  <small><span class="light-text">Posted on: <%= @post.updated_at.strftime("%B %e, %Y") %> by <%= @post.admin.full_name %></span></small>
   <hr />
   <div class="post-body-full"><%= markdown(@post.body) %></div>
   <hr />
