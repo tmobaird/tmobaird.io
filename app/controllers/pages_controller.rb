@@ -1,9 +1,12 @@
 class PagesController < ApplicationController
   def index
-    @title = "Welcome!"
-    @subtitle = "\"If at first you don't succeed, call it version 1.0.\""
+    info = YAML.load_file('app/views/pages/info.yml')
+    @title = info["title"]
+    @subtitle = info["subtitle"]
     @logos = Dir.glob("app/assets/images/logos/*/*.png")
     @logos.delete_if { |file| file.include?("ruby") || file.include?("rspec") }
+    @bios = info["bio"]
+    @projects = Project.all
   end
 
   def contact

@@ -1,28 +1,32 @@
 <footer class="footer">
   <div class="container">
-    <center>
-      <div class="row" style="padding-top: 10px;">
-        <a class="btn btn-sm btn-success" href="<%= root_url%>#about-me">About Me</a>
-        <a class="btn btn-sm btn-primary" href="<%= root_url%>#projects">Projects</a>
-        <%= link_to "Blog", posts_path, class: "btn btn-sm btn-info blog-link" %>
-        <a class="btn btn-sm btn-warning" href="<%= root_url%>contact">Contact</a>
-      </div>
-      <hr class="footer-separator" />
-      <div class="row">
-        <div class="row">
-          <a href="https://github.com/tmobaird"><%= image_tag("github.png", class:"social-image") %></a>
-          <a href="https://twitter.com/tmobaird"><%= image_tag("twitter.png", class:"social-image") %></a>
-          <a href="https://www.linkedin.com/in/tmobaird"><%= image_tag("linkedin.png", class:"social-image") %></a>
-          <a href="https://www.youtube.com/channel/UCQJvNoVOHD7xsr9qa_ER5mA"><%= image_tag("youtube.png", class:"social-image") %></a>
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+      <center>
+        <div class="row" style="padding-top: 10px;">
+          <a class="btn btn-sm btn-success" href="<%= root_url%>#about-me">About Me</a>
+          <a class="btn btn-sm btn-primary" href="<%= root_url%>#projects">Projects</a>
+          <%= link_to "Blog", posts_path, class: "btn btn-sm btn-info blog-link" %>
+          <a class="btn btn-sm btn-warning" href="<%= root_url%>contact">Contact</a>
         </div>
+        <hr class="footer-separator" />
         <div class="row">
-          <small class="primary-text">
-          tmobaird.io &#x2027; 
-          <a href="#top">Back to Top</a> &#x2027; 
-          <a href="http://fortune.com/2014/10/30/the-rocks-best-advice-for-success/">#HWitR</a> &#x2027; 
-          <a href="http://rubyonrails.org/">Created with Ruby on Rails </small><%= image_tag("rails.png", style: "height: 30px; width: 30px;") %></a>
+          <div class="row">
+            <a href="https://github.com/tmobaird"><%= image_tag("github.png", class:"social-image") %></a>
+            <a href="https://twitter.com/tmobaird"><%= image_tag("twitter.png", class:"social-image") %></a>
+            <a href="https://www.linkedin.com/in/tmobaird"><%= image_tag("linkedin.png", class:"social-image") %></a>
+            <a href="https://www.youtube.com/channel/UCQJvNoVOHD7xsr9qa_ER5mA"><%= image_tag("youtube.png", class:"social-image") %></a>
+          </div>
+          <div class="row">
+            <small class="primary-text">
+            tmobaird.io &#x2027; 
+            <a href="#top">Back to Top</a> &#x2027; 
+            <a href="http://fortune.com/2014/10/30/the-rocks-best-advice-for-success/">#HWitR</a> &#x2027; 
+            <a href="http://rubyonrails.org/">Created with Ruby on Rails </small><%= image_tag("rails.png", style: "height: 30px; width: 30px;") %></a>
+          </div>
         </div>
-      </div>
-    </center>
+      </center>
+    </div>
+    <div class="col-xs-1"></div>
   </div>
 </footer>

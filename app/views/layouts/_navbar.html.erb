@@ -7,12 +7,12 @@
           ☰
         </button>
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-7">
           <h2 class="title"><a href="<%= root_url%>">Tmobaird.io</a></h2>
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-4">
           <% unless current_admin.blank? %>
-            <%= link_to("Sign Out", destroy_admin_session_path, class: "btn btn-info", method: :delete) %>
+            <%= link_to("Sign Out", destroy_admin_session_path, class: "btn btn-info pull-right", method: :delete) %>
           <% end %>
         </div>
       </div>

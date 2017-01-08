@@ -10,4 +10,3 @@ $(document).on "turbolinks:load", ->
     content.slideToggle 500, ->
       button.text ->
         if content.is(":visible") then "Collapse" else "Show More"
-
