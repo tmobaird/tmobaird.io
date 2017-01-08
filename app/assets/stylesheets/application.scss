@@ -79,17 +79,22 @@ pre {
 
 .section-row {
   padding: 15px;
-  border-top: 0.25px solid $blue-green;
+  border-top: 0.25px solid #CCF0FF;
 }
 
 .footer-separator {
-  width: 300px;
+  min-width: 250px;
+  max-width: 300px;
 }
 
 .post-body-full {
   font-family: 'Open Sans', sans-serif;
   color: #3B3B3B;
   line-height: 180%;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .post-body {
@@ -106,4 +111,25 @@ pre {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   color: #242424;
+}
+
+.content-paragraph {
+  margin-bottom: 10px;
+}
+
+.opening-paragraph {
+  margin-bottom: -15px;
+}
+
+.right-border {
+  border-right: 1px solid #EEEEEE;
+}
+
+.project-card {
+  min-height: 275px;
+}
+
+.description {
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
 }
