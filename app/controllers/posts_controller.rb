@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post_url = "http://tmobaird.io/posts/#{@post.slug}"
+    @post_url = "http://www.tmobaird.io/posts/#{@post.slug}"
   end
 
   # GET /posts/new
