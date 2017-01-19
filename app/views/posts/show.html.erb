@@ -9,5 +9,7 @@
   <% if admin_signed_in? %>
     <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-md btn-outline-info" %>
   <% end %>
+
+  <%= render 'disqus' %>
 </div>
 <div class="col-md-2"></div>
