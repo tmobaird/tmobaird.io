@@ -8,6 +8,7 @@ RSpec.describe "posts/show", type: :view do
       :body => "MyText",
       :admin => admin
     ))
+    @body = "MyText"
   end
 
   it "renders attributes in <p>" do

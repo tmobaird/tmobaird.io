@@ -7,11 +7,19 @@
 
 // Used for code block syntax highlighting
 pre {
+  border: 1px solid $prime-blue;
   background-color: #2D2D2D;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 .post-body {
   padding: 10px;
+}
+
+.post {
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .hidden {
@@ -64,7 +72,7 @@ pre {
   font-size: 15vw;
 }
 .medium-header {
-  font-size: 10vw;
+  font-size: 9vw;
   color: $prime-blue;
 }
 .small-header {
@@ -104,13 +112,22 @@ pre {
 }
 
 .light-text {
-  color: #6E6E6E;
+  color: #AEAEAE;
 }
 
 .post-title {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   color: #242424;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.open-sans-bold {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }
 
 .content-paragraph {

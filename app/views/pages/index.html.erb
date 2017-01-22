@@ -1,97 +1,99 @@
-<div class="row welcome-row">
-  <center>
-  <h1 class="large-header hidden"><%= @title %></h1>
-  <h5 class="hidden" id="subtitle" ><%= @subtitle %></h5>
-  </center>
-</div>
-<div class="row" id="about-me">
-  <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
-      <div class="card" style="padding:0px;">
-        <div class="card-block">
-          <div class="card-title row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
+<div class="main-container">
+  <div class="row welcome-row">
+    <center>
+    <h1 class="large-header hidden"><%= @title %></h1>
+    <h5 class="hidden" id="subtitle" ><%= @subtitle %></h5>
+    </center>
+  </div>
+  <div class="row" id="about-me">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+        <div class="card" style="padding:0px;">
+          <div class="card-block">
+            <div class="card-title row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <center>
+                  <div class="col-sm-5 profile-image-col">
+                    <img src="https://avatars3.githubusercontent.com/u/7366444?v=3&s=460" class="profile-image img-rounded" alt="tmobaird">
+                  </div>
+                  <div class="col-sm-7">
+                    <h2 class="open-sans" style='padding-top: 60px; margin-bottom: -10px;'>Thomas Baird</h2>
+                    <p><small>@tmobaird</small></p>
+                  </div>
+                </center>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="card-text">
+              <div class="show opening-paragraph">
+                <p class="open-sans"><%= @bios.shift.html_safe %></p>
+              </div>
+            <div class="additional-content hidden">
+              <% @bios.each do |b| %>
+                <p class="open-sans content-paragraph"><%= b.html_safe %></p>
+              <% end %>
+              <p><strong>Languages</strong>: <br />
+                <%= image_tag "logos/languages/ruby.png", class: "icon-image", title: "Ruby", "data-toggle" => "tooltip" %>
+                <% @logos.select { |name| name.include?("/languages/")}.each do |logo| %>
+                  <% if logo.split('/').last == "cpp.png" %>
+                    <%= image_tag "logos/languages/#{logo.split('/').last}", class: "icon-image", title: "C++", "data-toggle" => "tooltip" %>
+                  <% else %>
+                    <%= image_tag "logos/languages/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
+                  <% end %>
+                <% end %>
+              </p>
+              <p><strong>Frameworks</strong>: <br />
+                <%= image_tag "logos/frameworks/ruby_on_rails.png", class: "icon-image", title: "Ruby on Rails", "data-toggle" => "tooltip" %>
+                <% @logos.select { |name| name.include?("/frameworks/")}.each do |logo| %>
+                  <%= image_tag "logos/frameworks/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
+                <% end %>
+              </p>
+              <p><strong>Tools</strong>: <br />
+                <%= image_tag "logos/tools/rspec.png", class: "icon-image", title: "RSpec", "data-toggle" => "tooltip" %>
+                <% @logos.select { |name| name.include?("/tools/")}.each do |logo| %>
+                  <%= image_tag "logos/tools/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip"  %>
+                <% end %>
+              </p>
               <center>
-                <div class="col-sm-5 profile-image-col">
-                  <img src="https://avatars3.githubusercontent.com/u/7366444?v=3&s=460" class="profile-image img-rounded" alt="tmobaird">
-                </div>
-                <div class="col-sm-7">
-                  <h2 class="open-sans" style='padding-top: 60px; margin-bottom: -10px;'>Thomas Baird</h2>
-                  <p><small>@tmobaird</small></p>
-                </div>
+                <hr />
+                <a href="https://github.com/tmobaird"><%= image_tag("github.png", class: "icon-image") %></a>
+                <a href="https://twitter.com/tmobaird"><%= image_tag("twitter.png", class: "icon-image") %></a>
+                <a href="https://www.linkedin.com/in/tmobaird"><%= image_tag("linkedin.png", class: "icon-image") %></a>
+                <a href="https://www.youtube.com/channel/UCQJvNoVOHD7xsr9qa_ER5mA"><%= image_tag("youtube.png", class: "icon-image") %></a>
               </center>
             </div>
-            <div class="col-md-2"></div>
-          </div>
-          <div class="card-text">
-            <div class="show opening-paragraph">
-              <p class="open-sans"><%= @bios.shift.html_safe %></p>
             </div>
-          <div class="additional-content hidden">
-            <% @bios.each do |b| %>
-              <p class="open-sans content-paragraph"><%= b.html_safe %></p>
-            <% end %>
-            <p><strong>Languages</strong>: <br />
-              <%= image_tag "logos/languages/ruby.png", class: "icon-image", title: "Ruby", "data-toggle" => "tooltip" %>
-              <% @logos.select { |name| name.include?("/languages/")}.each do |logo| %>
-                <% if logo.split('/').last == "cpp.png" %>
-                  <%= image_tag "logos/languages/#{logo.split('/').last}", class: "icon-image", title: "C++", "data-toggle" => "tooltip" %>
-                <% else %>
-                  <%= image_tag "logos/languages/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
-                <% end %>
-              <% end %>
-            </p>
-            <p><strong>Frameworks</strong>: <br />
-              <%= image_tag "logos/frameworks/ruby_on_rails.png", class: "icon-image", title: "Ruby on Rails", "data-toggle" => "tooltip" %>
-              <% @logos.select { |name| name.include?("/frameworks/")}.each do |logo| %>
-                <%= image_tag "logos/frameworks/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
-              <% end %>
-            </p>
-            <p><strong>Tools</strong>: <br />
-              <%= image_tag "logos/tools/rspec.png", class: "icon-image", title: "RSpec", "data-toggle" => "tooltip" %>
-              <% @logos.select { |name| name.include?("/tools/")}.each do |logo| %>
-                <%= image_tag "logos/tools/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip"  %>
-              <% end %>
-            </p>
-            <center>
-              <hr />
-              <a href="https://github.com/tmobaird"><%= image_tag("github.png", class: "icon-image") %></a>
-              <a href="https://twitter.com/tmobaird"><%= image_tag("twitter.png", class: "icon-image") %></a>
-              <a href="https://www.linkedin.com/in/tmobaird"><%= image_tag("linkedin.png", class: "icon-image") %></a>
-              <a href="https://www.youtube.com/channel/UCQJvNoVOHD7xsr9qa_ER5mA"><%= image_tag("youtube.png", class: "icon-image") %></a>
-            </center>
           </div>
+          <div class="card-footer">
+            <span class="btn btn-sm btn-link pull-right show-additional-content">Show More</span>
           </div>
-        </div>
-        <div class="card-footer">
-          <span class="btn btn-sm btn-link pull-right show-additional-content">Show More</span>
         </div>
       </div>
+      <div class="col-lg-2"></div>
     </div>
-    <div class="col-lg-2"></div>
   </div>
-</div>
-<div class="row section-row bottom-border" id="projects">
-  <center><h1 class="medium-header">Projects</h1></center>
-  <!-- Need to make this render a partial for an array of project objects -->
-  <div class="row">
-    <% @projects.each do |p| %>
-      <div class="col-md-4">
-        <div class="card project-card">
-          <div class="card-block">
-            <h4 class="card-title">
-            <center><%= p.title %> <%= image_tag("folder-icon.png", class:"project-image img-rounded") %></center>
-            </h4>
-            <p class="card-text description"><%= p.description %></p>
-            <center>
-              <%= link_to(image_tag("github.png", class:"icon-image"), p.github_url, :class => 'icon-image float-bottom')  %>
-              <%= link_to(image_tag("cursor.png", class:"icon-image"), p.app_url, :class => 'icon-image float-bottom')  %>
-            </center>
+  <div class="row section-row bottom-border" id="projects">
+    <center><h1 class="medium-header">Projects</h1></center>
+    <!-- Need to make this render a partial for an array of project objects -->
+    <div class="row">
+      <% @projects.each do |p| %>
+        <div class="col-md-4">
+          <div class="card project-card">
+            <div class="card-block">
+              <h4 class="card-title">
+              <center><%= p.title %> <%= image_tag("folder-icon.png", class:"project-image img-rounded") %></center>
+              </h4>
+              <p class="card-text description"><%= p.description %></p>
+              <center>
+                <%= link_to(image_tag("github.png", class:"icon-image"), p.github_url, :class => 'icon-image float-bottom')  %>
+                <%= link_to(image_tag("cursor.png", class:"icon-image"), p.app_url, :class => 'icon-image float-bottom')  %>
+              </center>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

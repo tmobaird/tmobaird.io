@@ -2,9 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "turbolinks:load", ->
-  console.log("test")
-  cardTexts = $('.card-text .post-body')
-  appendText element for element in cardTexts
+  posts = $('.post .post-body')
+  appendText element for element in posts
+
   $("#view-tab").on "click", ->
     text = document.getElementById("post-body-form").value
     html_content = markdown.toHTML(text)
@@ -12,6 +12,6 @@ $(document).on "turbolinks:load", ->
 
 
 appendText = (elem) ->
-  if document.querySelector(".post-body").innerHTML.length > 400
-    substring = elem.innerHTML.substring(0,400) + "<br />..."
+  if elem.innerHTML.length > 600
+    substring = elem.innerHTML.substring(0,600) + "..."
     elem.innerHTML = substring

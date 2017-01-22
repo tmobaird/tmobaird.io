@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post_url = "http://www.tmobaird.io/posts/#{@post.slug}"
+    @body = Post.parse_markdown(@post.body)
   end
 
   # GET /posts/new
