@@ -8,9 +8,8 @@ class Post < ApplicationRecord
 
   def self.parse_markdown(text)
     renderer = Redcarpet::Render::HTML.new(markdown_options)
-    @markdown ||= Redcarpet::Markdown.new(renderer, markdown_extensions)
-
-    @markdown.render(text).html_safe
+    markdown ||= Redcarpet::Markdown.new(renderer, markdown_extensions)
+    markdown.render(text).html_safe
   end
 
   private
