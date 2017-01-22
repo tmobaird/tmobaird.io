@@ -1,0 +1,11 @@
+<div class="post">
+      <h2 class="post-title"><%= link_to post.title, post_path(post) %></h2>
+      <p class="light-text open-sans"><small><%= post.updated_at.strftime("%B %d, %Y") %> By <%= post.admin.full_name %></small></p>
+      <div class="post-body"><%= Post.parse_markdown(post.body) %></div>
+    <% if admin_signed_in? %>
+      <%= link_to 'Edit', edit_post_path(post), class: "btn btn-sm btn-outline-primary pull-left" %>
+      <%= link_to 'Destroy', post, method: :delete, class: "btn btn-sm btn-outline-primary pull-left", data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <%= link_to 'Read More', post_path(post), class: "btn btn-sm btn-outline-info pull-right" %>
+</div>
+<hr style="width: 95%;"/>

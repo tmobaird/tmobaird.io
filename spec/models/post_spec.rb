@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#parse_markdown" do
+    it "returns <b>test</b>" do
+      expect(Post.parse_markdown("**test**")).to include("<strong>test</strong>")
+    end
+  end
 end

@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post_url = "http://www.tmobaird.io/posts/#{@post.slug}"
+    @body = Post.parse_markdown(@post.body)
   end
 
   # GET /posts/new
@@ -61,6 +62,13 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def markdown
+    parsed_html = Post.parse_markdown(params[:content])
+    respond_to do |format|
+      format.json { render json: { parsed_html: parsed_html } }
     end
   end
 
