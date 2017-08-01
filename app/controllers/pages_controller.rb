@@ -3,9 +3,8 @@ class PagesController < ApplicationController
     info = YAML.load_file('app/views/pages/info.yml')
     @title = info["title"]
     @subtitle = info["subtitle"]
-    @logos = Dir.glob("app/assets/images/logos/*/*.png")
-    @logos.delete_if { |file| file.include?("ruby") || file.include?("rspec") }
     @bios = info["bio"]
+    @skills = YAML.load_file('app/views/pages/skills.yml')
     @projects = Project.all
   end
 

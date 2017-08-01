@@ -35,25 +35,18 @@
                 <p class="open-sans content-paragraph"><%= b.html_safe %></p>
               <% end %>
               <p><strong>Languages</strong>: <br />
-                <%= image_tag "logos/languages/ruby.png", class: "icon-image", title: "Ruby", "data-toggle" => "tooltip" %>
-                <% @logos.select { |name| name.include?("/languages/")}.each do |logo| %>
-                  <% if logo.split('/').last == "cpp.png" %>
-                    <%= image_tag "logos/languages/#{logo.split('/').last}", class: "icon-image", title: "C++", "data-toggle" => "tooltip" %>
-                  <% else %>
-                    <%= image_tag "logos/languages/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
-                  <% end %>
+                <% @skills['languages'].each do |item| %>
+                  <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
                 <% end %>
               </p>
               <p><strong>Frameworks</strong>: <br />
-                <%= image_tag "logos/frameworks/ruby_on_rails.png", class: "icon-image", title: "Ruby on Rails", "data-toggle" => "tooltip" %>
-                <% @logos.select { |name| name.include?("/frameworks/")}.each do |logo| %>
-                  <%= image_tag "logos/frameworks/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip" %>
+                <% @skills['frameworks'].each do |item| %>
+                  <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
                 <% end %>
               </p>
               <p><strong>Tools</strong>: <br />
-                <%= image_tag "logos/tools/rspec.png", class: "icon-image", title: "RSpec", "data-toggle" => "tooltip" %>
-                <% @logos.select { |name| name.include?("/tools/")}.each do |logo| %>
-                  <%= image_tag "logos/tools/#{logo.split('/').last}", class: "icon-image", title: "#{logo.split('/').last.remove('.png').titleize}", "data-toggle" => "tooltip"  %>
+                <% @skills['tools'].each do |item| %>
+                  <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
                 <% end %>
               </p>
               <center>
