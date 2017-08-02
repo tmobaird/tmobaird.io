@@ -75,14 +75,21 @@
         <div class="col-md-4">
           <div class="card project-card">
             <div class="card-block">
-              <h4 class="card-title">
-              <center><%= p.title %> <%= image_tag("folder-icon.png", class:"project-image img-rounded") %></center>
-              </h4>
-              <p class="card-text description"><%= p.description %></p>
-              <center>
-                <%= link_to(image_tag("github.png", class:"icon-image"), p.github_url, :class => 'icon-image float-bottom')  %>
-                <%= link_to(image_tag("cursor.png", class:"icon-image"), p.app_url, :class => 'icon-image float-bottom')  %>
-              </center>
+              <div class="row">
+                <center>
+                  <%= image_tag("folder-icon.png", class:"project-image img-rounded") %>
+                  <h3 class="open-sans"><%= p.title %></h3 style="padding-top: 5px">
+                </center>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <p class="card-text description"><%= p.description %></p>
+                  <center>
+                    <%= link_to(image_tag("github.png", class:"icon-image"), p.github_url, :class => 'icon-image float-bottom')  %>
+                    <%= link_to(image_tag("cursor.png", class:"icon-image"), p.app_url, :class => 'icon-image float-bottom')  %>
+                  </center>
+                </div>
+              </div>
             </div>
           </div>
         </div>
