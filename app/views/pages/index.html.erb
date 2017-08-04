@@ -7,56 +7,55 @@
   </div>
   <div class="row" id="about-me">
     <div class="row">
-      <div class="col-lg-2"></div>
-      <div class="col-lg-8">
+      <div class="col-lg-8 offset-lg-2">
         <div class="card" style="padding:0px;">
           <div class="card-block">
-            <div class="card-title row">
-              <div class="col-md-2"></div>
-              <div class="col-md-8">
-                <center>
-                  <div class="col-sm-5 profile-image-col">
-                    <img src="https://avatars3.githubusercontent.com/u/7366444?v=3&s=460" class="profile-image img-rounded" alt="tmobaird">
-                  </div>
-                  <div class="col-sm-7">
-                    <h2 class="open-sans" style='padding-top: 60px; margin-bottom: -10px;'>Thomas Baird</h2>
-                    <p><small>@tmobaird</small></p>
-                  </div>
-                </center>
-              </div>
-              <div class="col-md-2"></div>
-            </div>
             <div class="card-text">
-              <div class="show opening-paragraph">
-                <p class="open-sans"><%= @bios.shift.html_safe %></p>
+              <div class="row">
+                <div class="col-md-8 offset-md-2">
+                  <center>
+                    <div class="col-sm-5 profile-image-col">
+                      <img src="https://avatars3.githubusercontent.com/u/7366444?v=3&s=460" class="profile-image img-rounded" alt="tmobaird">
+                    </div>
+                    <div class="col-sm-7">
+                      <h2 class="open-sans" style='padding-top: 60px; margin-bottom: -10px;'>Thomas Baird</h2>
+                      <p><small>@tmobaird</small></p>
+                    </div>
+                  </center>
+                </div>
               </div>
-            <div class="additional-content hidden">
-              <% @bios.each do |b| %>
-                <p class="open-sans content-paragraph"><%= b.html_safe %></p>
-              <% end %>
-              <p><strong>Languages</strong>: <br />
-                <% @skills['languages'].each do |item| %>
-                  <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
-                <% end %>
-              </p>
-              <p><strong>Frameworks</strong>: <br />
-                <% @skills['frameworks'].each do |item| %>
-                  <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
-                <% end %>
-              </p>
-              <p><strong>Tools</strong>: <br />
-                <% @skills['tools'].each do |item| %>
-                  <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
-                <% end %>
-              </p>
-              <center>
-                <hr />
-                <a href="https://github.com/tmobaird"><%= image_tag("github.png", class: "icon-image") %></a>
-                <a href="https://twitter.com/tmobaird"><%= image_tag("twitter.png", class: "icon-image") %></a>
-                <a href="https://www.linkedin.com/in/tmobaird"><%= image_tag("linkedin.png", class: "icon-image") %></a>
-                <a href="https://www.youtube.com/channel/UCQJvNoVOHD7xsr9qa_ER5mA"><%= image_tag("youtube.png", class: "icon-image") %></a>
-              </center>
-            </div>
+              <div class="row">
+                <div class="show opening-paragraph">
+                  <p class="open-sans"><%= @bios.shift.html_safe %></p>
+                </div>
+                <div class="additional-content hidden">
+                  <% @bios.each do |b| %>
+                    <p class="open-sans content-paragraph"><%= b.html_safe %></p>
+                  <% end %>
+                  <p><strong>Languages</strong>: <br />
+                    <% @skills['languages'].each do |item| %>
+                      <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
+                    <% end %>
+                  </p>
+                  <p><strong>Frameworks</strong>: <br />
+                    <% @skills['frameworks'].each do |item| %>
+                      <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
+                    <% end %>
+                  </p>
+                  <p><strong>Tools</strong>: <br />
+                    <% @skills['tools'].each do |item| %>
+                      <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
+                    <% end %>
+                  </p>
+                  <center>
+                    <hr />
+                    <a href="https://github.com/tmobaird"><%= image_tag("github.png", class: "icon-image") %></a>
+                    <a href="https://twitter.com/tmobaird"><%= image_tag("twitter.png", class: "icon-image") %></a>
+                    <a href="https://www.linkedin.com/in/tmobaird"><%= image_tag("linkedin.png", class: "icon-image") %></a>
+                    <a href="https://www.youtube.com/channel/UCQJvNoVOHD7xsr9qa_ER5mA"><%= image_tag("youtube.png", class: "icon-image") %></a>
+                  </center>
+                </div>
+              </div>
             </div>
           </div>
           <div class="card-footer">
@@ -64,7 +63,6 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-2"></div>
     </div>
   </div>
   <div class="row section-row bottom-border" id="projects">
