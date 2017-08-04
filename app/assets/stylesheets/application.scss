@@ -81,7 +81,11 @@ pre {
 .welcome-row {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: $prime-blue;
+  background: $prime-blue;
+  background: -webkit-linear-gradient($prime-blue, #92dfff);
+  background: -o-linear-gradient($prime-blue, #92dfff);
+  background: -moz-linear-gradient($prime-blue, #92dfff);
+  background: linear-gradient($prime-blue, #92dfff);
   color: white;
 }
 
