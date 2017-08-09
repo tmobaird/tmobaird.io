@@ -1,10 +1,9 @@
-<div class="col-md-2"></div>
-<div class="col-md-8">
-  <h1>Editing Post</h1>
+<div class="col-md-8 offset-md-2">
+  <center><h2>Editing: <i><%= @post.title %></i></h2></center>
+  <hr />
 
   <%= render 'form', post: @post %>
 
-  <%= link_to 'Show', @post %> |
-  <%= link_to 'Back', posts_path %>
+  <%= link_to '< Back', posts_path, class: "btn btn-sm btn-outline-info" %>
+  <%= link_to 'Show', @post, class: "btn btn-sm btn-outline-warning" %>
 </div>
-<div class="col-md-2"></div>

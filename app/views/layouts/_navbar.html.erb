@@ -28,6 +28,10 @@
         <a class="menu-item" href="<%= root_url%>#projects"><div class="row menu-row bottom-border-white">Projects</div></a>
         <a class="menu-item" href="/posts"><div class="row menu-row bottom-border-white">Blog</div></a>
         <a class="menu-item" href="<%= root_url%>contact"><div class="row menu-row">Contact</div></a>
+        <% unless current_admin.blank? %>
+        <div class="menu-item"><div class="row section-header top-border-white bottom-border-white">Admin</div></div>
+        <a class="menu-item" href="/projects"><div class="row menu-row">Manage Projects</div></a>
+        <% end %>
       </div>
     </div>
   </div>

@@ -5,9 +5,9 @@
   <hr />
   <div class="post-body-full"><%= @body.html_safe %></div>
   <hr />
-  <%= link_to '< Back', posts_path, class: "btn btn-md btn-outline-primary" %>
+  <%= link_to '< Back', posts_path, class: "btn btn-md btn-outline-info" %>
   <% if admin_signed_in? %>
-    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-md btn-outline-info" %>
+    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-md btn-outline-warning" %>
   <% end %>
 
   <%= render 'disqus' %>
