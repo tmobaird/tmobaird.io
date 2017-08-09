@@ -12,15 +12,25 @@
   <% end %>
 
   <div class="actions">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control" %>
+    <%= f.text_area :description, class: "form-control", maxLength: 140 %>
+    </div>
+    <div class="form-group">
     <%= f.label :github_url %>
     <%= f.text_field :github_url, class: "form-control" %>
+    </div>
+    <div class="form-group">
     <%= f.label :app_url %>
     <%= f.text_field :app_url, class: "form-control" %>
+    </div>
 
-    <%= f.submit "#{action_name == "edit" ? "Update" : "Create"} Project", class: "btn btn-large btn-primary" %>
+    <div class="col-md-6 offset-md-3">
+      <%= f.submit "#{action_name == "edit" ? "Update" : "Create"} Project", class: "btn btn-large btn-block btn-primary" %>
+    </div>
   </div>
 <% end %>

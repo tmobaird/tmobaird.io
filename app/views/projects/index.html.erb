@@ -1,9 +1,12 @@
-<h1>Projects</h1>
+<center><h1>Projects</h1></center>
+<hr style="width: 90%;"/>
   <div class="row">
     <% @projects.each do |project| %>
-      <%= render "projects/project_card", project: project, size: 4 %>
+      <div class="col-md-4">
+        <%= render "projects/project_card", project: project %>
+      </div>
     <% end %>
   </div>
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path, class: "btn btn-md btn-outline-info" %>
