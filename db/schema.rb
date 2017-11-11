@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117025124) do
+ActiveRecord::Schema.define(version: 20170809234952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,9 +50,10 @@ ActiveRecord::Schema.define(version: 20170117025124) do
     t.string   "title"
     t.text     "body"
     t.integer  "admin_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "slug"
+    t.boolean  "published",  default: true, null: false
     t.index ["admin_id"], name: "index_posts_on_admin_id", using: :btree
   end
 
@@ -65,7 +66,6 @@ ActiveRecord::Schema.define(version: 20170117025124) do
     t.datetime "updated_at",  null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "github_repo"
   end
 
   add_foreign_key "posts", "admins"

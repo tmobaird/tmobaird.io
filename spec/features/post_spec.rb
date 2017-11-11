@@ -9,6 +9,13 @@ RSpec.feature "Posts" do
       expect(page).to have_selector(".post", text: "New Post 1")
       expect(page).to have_selector(".post", text: "New Post 2")
     end
+    context "when a user is not signed in" do
+      it "does not show unpublished posts" do
+        post = FactoryGirl.create(:post, title: "Unpublished Post", body: "Test Post Body", published: false)
+        visit posts_path
+        expect(page).to_not have_selector(".post", text: "Unpublished Post")
+      end
+    end
   end
   context "Auth Required" do
     before { sign_in admin }
@@ -22,17 +29,31 @@ RSpec.feature "Posts" do
         expect(page).to have_link("Edit")
         expect(page).to have_link("Back")
       end
+      it "does not show unpublished posts" do
+        post = FactoryGirl.create(:post, title: "Unpublished Post", body: "Test Post Body", published: false)
+        visit posts_path
+        element = find(".post", text: "Unpublished Post")
+        expect(element).to have_selector(".badge", text: "Draft")
+      end
     end
     describe "Create Post" do
-      it "creates and displays a new post", js: true do
+      before do
         visit new_post_path
         fill_in "post[title]", with: "My New Post"
         fill_in "post[body]", with: "My New Posts Body"
+      end
+      it "creates and displays a new post", js: true do
         click_button "Create Post"
         expect(page).to have_selector(".alert", text: "Post was successfully created.")
         expect(page).to have_selector("h1", text: "My New Post")
         expect(page).to have_selector(".post-body-full", text: "My New Posts Body")
         expect(page).to have_selector("small", text: "by #{admin.full_name}")
+      end
+      it "creates a post and tags it as a draft", js: true do
+        uncheck "post_published"
+        click_button "Create Post"
+        expect(page).to have_selector(".alert", text: "Post was successfully created.")
+        expect(page).to have_selector(".badge", text: "Draft")
       end
     end
     describe "Edit Post" do

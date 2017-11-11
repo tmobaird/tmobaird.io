@@ -12,6 +12,18 @@ class Post < ApplicationRecord
     markdown.render(text).html_safe
   end
 
+  def self.published_posts
+    self.where(published: true)
+  end
+
+  def self.unpublished_posts
+    self.where(published: false)
+  end
+
+  def published?
+    published
+  end
+
   private
 
   def self.markdown_options
