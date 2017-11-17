@@ -59,6 +59,9 @@ tools:
   - postgres:
     name: "PostgresQL"
     image: "tools/postgres.png"
+  - docker:
+    name: "Docker"
+    image: "tools/docker.png"
   - jest:
     name: "Jest"
     image: "tools/jest.png"
@@ -77,15 +80,12 @@ tools:
   - spock:
     name: "Spock"
     image: "tools/spock.png"
-  - mongodb:
-    name: "MongoDB"
-    image: "tools/mongodb.png"
-  - mysql:
-    name: "MySQL"
-    image: "tools/mysql.png"
   - gradle:
     name: "Gradle"
     image: "tools/gradle.svg"
-  - docker:
-    name: "Docker"
-    image: "tools/docker.png"
+  - mysql:
+    name: "MySQL"
+    image: "tools/mysql.png"
+  - mongodb:
+    name: "MongoDB"
+    image: "tools/mongodb.png"

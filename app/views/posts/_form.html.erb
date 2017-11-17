@@ -33,11 +33,15 @@
       <div class="tab-pane fade in active" id="write-display">
         <div class="form-group">
           <%= f.label :body, { hidden: true } %>
-          <%= f.text_area :body, class: "form-control", rows: "20", id: "post-body-form" %>
+          <%= f.text_area :body, class: "form-control", rows: "15", id: "post-body-form" %>
         </div>
       </div>
       <div class="tab-pane fade post-body-full" id="view-display"></div>
     </div>
+  </div>
+  <div class="row">
+    <strong><%= f.label :published, 'Publish', style:"padding-right: 10px;" %></strong>
+    <%= f.check_box :published %>
   </div>
   <hr />
 

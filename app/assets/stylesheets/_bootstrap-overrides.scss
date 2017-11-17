@@ -109,3 +109,48 @@
 .img-rounded {
   border-radius: 0.7rem;
 }
+
+// Badges
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+
+$badge-color:                 #FFF !default;
+$badge-link-hover-color:      #FFF !default;
+$badge-font-size:             75% !default;
+$badge-font-weight:           bold !default;
+$badge-padding-y:             .25em !default;
+$badge-padding-x:             .4em !default;
+
+.badge {
+  display: inline-block;
+  padding: $badge-padding-y $badge-padding-x;
+  font-size: $badge-font-size;
+  font-weight: $badge-font-weight;
+  line-height: 1;
+  color: $badge-color;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include border-radius();
+
+  // Empty badges collapse automatically
+  &:empty {
+    display: none;
+  }
+}
+
+.badge-warning {
+  background-color: $yellow;
+}
+
+.badge-success {
+  background-color: $green;
+}
+
+.badge-danger {
+  background-color: $red;
+}

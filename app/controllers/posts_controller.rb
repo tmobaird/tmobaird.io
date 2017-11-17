@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order(updated_at: :desc).page params[:page]
+    posts = admin_signed_in? ? Post.all : Post.published_posts
+    @posts = posts.order(updated_at: :desc).page params[:page]
   end
 
   # GET /posts/1
@@ -80,6 +81,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :published)
     end
 end
