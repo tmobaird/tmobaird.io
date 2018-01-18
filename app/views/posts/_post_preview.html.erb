@@ -7,7 +7,7 @@
         <span class="badge badge-success">New</span>
       <% end %>
       <p class="light-text open-sans"><small><%= post.updated_at.strftime("%B %d, %Y") %> By <%= post.admin.full_name %></small></p>
-      <div class="post-body"><%= Post.parse_markdown(post.body) %></div>
+      <div class="post-body"><%= MarkdownRenderer.parse_markdown(post.body) %></div>
       <div class="pull-right">
         <%= link_to 'Read More', post_path(post), class: "btn btn-sm btn-outline-info" %>
         <% if admin_signed_in? %>

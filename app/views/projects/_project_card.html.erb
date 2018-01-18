@@ -1,26 +1,23 @@
 <div class="card">
   <div class="card-block">
-    <h4 class="card-title">
-      <center><%= project.title %></center>
-    </h4>
+    <div class="center-align">
+      <%= image_tag("folder-icon.png", class: "project-image img-rounded") %>
+      <h4 class="card-title center-align"><%= project.title %></h4>
+    </div>
     <p class="card-text" style="min-height: 100px;"><%= project.description %></p>
-    <div class="row">
-      <center>
+    <div class="row center-align">
       <% unless project.github_url.blank? %>
-        <a href="<%= project.github_url %>" class="icon-image"><%= image_tag("github.png", class:"icon-image") %></a>
+        <a href="<%= project.github_url %>" class="icon-image"><%= image_tag("github.png", class: "icon-image") %></a>
       <% end %>
       <% unless project.app_url.blank? %>
-        <a href="<%= project.app_url %>" class="icon-image"><%= image_tag("cursor.png", class:"icon-image") %></a>
+        <a href="<%= project.app_url %>" class="icon-image"><%= image_tag("cursor.png", class: "icon-image") %></a>
       <% end %>
-      </center>
     </div>
-    <div class="row spaced-row">
+    <div class="row spaced-row center-align">
       <% unless current_admin.blank? %>
-        <center> 
-          <%= link_to 'Show', project, class: "btn btn-sm btn-primary" %>
-          <%= link_to 'Edit', edit_project_path(project), class: "btn btn-sm btn-warning" %>
-          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
-        </center>
+        <%= link_to 'Show', project, class: "btn btn-sm btn-primary" %>
+        <%= link_to 'Edit', edit_project_path(project), class: "btn btn-sm btn-warning" %>
+        <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" %>
       <% end %>
     </div>
   </div>

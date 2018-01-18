@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    posts = admin_signed_in? ? Post.all : Post.published_posts
+    posts = admin_signed_in? ? Post.all : Post.published
     @posts = posts.order(updated_at: :desc).page params[:page]
   end
 
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post_url = "http://www.tmobaird.io/posts/#{@post.slug}"
-    @body = Post.parse_markdown(@post.body)
+    @body = MarkdownRenderer.parse_markdown(@post.body)
   end
 
   # GET /posts/new
@@ -67,7 +67,7 @@ class PostsController < ApplicationController
   end
 
   def markdown
-    parsed_html = Post.parse_markdown(params[:content])
+    parsed_html = MarkdownRenderer.parse_markdown(params[:content])
     respond_to do |format|
       format.json { render json: { parsed_html: parsed_html } }
     end

@@ -1,9 +1,7 @@
 <div class="main-container">
-  <div class="row welcome-row">
-    <center>
+  <div class="row welcome-row center-align">
     <h1 class="large-header hidden"><%= @title %></h1>
-    <h5 class="hidden" id="subtitle" ><%= @subtitle %></h5>
-    </center>
+    <h5 class="hidden" id="subtitle"><%= @subtitle %></h5>
   </div>
   <div class="row" id="about-me">
     <div class="row">
@@ -12,16 +10,16 @@
           <div class="card-block">
             <div class="card-text">
               <div class="row">
-                <div class="col-md-8 offset-md-2">
-                  <center>
-                    <div class="col-sm-5 profile-image-col">
-                      <img src="https://avatars3.githubusercontent.com/u/7366444?v=3&s=460" class="profile-image img-rounded" alt="tmobaird">
-                    </div>
-                    <div class="col-sm-7">
-                      <h2 class="open-sans" style='padding-top: 60px; margin-bottom: -10px;'>Thomas Baird</h2>
-                      <p><small>@tmobaird</small></p>
-                    </div>
-                  </center>
+                <div class="col-md-8 offset-md-2 center-align">
+                  <div class="col-sm-5 profile-image-col">
+                    <img src="https://avatars3.githubusercontent.com/u/7366444?v=3&s=460" class="profile-image img-rounded" alt="tmobaird">
+                  </div>
+                  <div class="col-sm-7">
+                    <h2 class="open-sans" style='padding-top: 60px; margin-bottom: -10px;'>Thomas Baird</h2>
+                    <p>
+                      <small>@tmobaird</small>
+                    </p>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -32,28 +30,28 @@
                   <% @bios.each do |b| %>
                     <p class="open-sans content-paragraph"><%= b.html_safe %></p>
                   <% end %>
-                  <p><strong>Languages</strong>: <br />
+                  <p><strong>Languages</strong>: <br/>
                     <% @skills['languages'].each do |item| %>
                       <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
                     <% end %>
                   </p>
-                  <p><strong>Frameworks</strong>: <br />
+                  <p><strong>Frameworks</strong>: <br/>
                     <% @skills['frameworks'].each do |item| %>
                       <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
                     <% end %>
                   </p>
-                  <p><strong>Tools</strong>: <br />
+                  <p><strong>Tools</strong>: <br/>
                     <% @skills['tools'].each do |item| %>
                       <%= image_tag "logos/#{item['image']}", class: "icon-image", title: "#{item['name']}", "data-toggle" => "tooltip" %>
                     <% end %>
                   </p>
-                  <center>
-                    <hr />
+                  <div class="center-align">
+                    <hr/>
                     <a href="https://github.com/tmobaird"><%= image_tag("github.png", class: "icon-image") %></a>
                     <a href="https://twitter.com/tmobaird"><%= image_tag("twitter.png", class: "icon-image") %></a>
                     <a href="https://www.linkedin.com/in/tmobaird"><%= image_tag("linkedin.png", class: "icon-image") %></a>
                     <a href="https://www.youtube.com/channel/UCQJvNoVOHD7xsr9qa_ER5mA"><%= image_tag("youtube.png", class: "icon-image") %></a>
-                  </center>
+                  </div>
                 </div>
               </div>
             </div>
@@ -66,30 +64,12 @@
     </div>
   </div>
   <div class="row section-row bottom-border" id="projects">
-    <center><h1 class="medium-header">Projects</h1></center>
+    <h1 class="medium-header center-align">Projects</h1>
     <!-- Need to make this render a partial for an array of project objects -->
     <div class="row">
       <% @projects.each do |p| %>
         <div class="col-md-4">
-          <div class="card project-card">
-            <div class="card-block">
-              <div class="row">
-                <center>
-                  <%= image_tag("folder-icon.png", class:"project-image img-rounded") %>
-                  <h3 class="open-sans"><%= p.title %></h3 style="padding-top: 5px">
-                </center>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <p class="card-text description"><%= p.description %></p>
-                  <center>
-                    <%= link_to(image_tag("github.png", class:"icon-image"), p.github_url, :class => 'icon-image float-bottom')  %>
-                    <%= link_to(image_tag("cursor.png", class:"icon-image"), p.app_url, :class => 'icon-image float-bottom')  %>
-                  </center>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render partial: 'projects/project_card', locals: {project: p} %>
         </div>
       <% end %>
     </div>
