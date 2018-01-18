@@ -1,17 +1,20 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "posts/show", type: :view do
+RSpec.describe 'posts/show', type: :view do
   let(:admin) { FactoryGirl.create :admin }
-  before(:each) do
+
+  before do
     @post = assign(:post, Post.create!(
-      :title => "Title",
-      :body => "MyText",
-      :admin => admin
+                            title: 'Title',
+                            body: 'MyText',
+                            admin: admin
     ))
-    @body = "MyText"
+    @body = 'MyText'
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Title/)
     expect(rendered).to match(/MyText/)

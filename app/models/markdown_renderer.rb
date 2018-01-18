@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MarkdownRenderer
   def self.parse_markdown(text)
     renderer = Redcarpet::Render::HTML.new(markdown_options)
@@ -5,12 +7,10 @@ class MarkdownRenderer
     markdown.render(text).html_safe
   end
 
-  private
-
   def self.markdown_options
     {
       filter_html: true,
-      link_attributes: {rel: 'nofollow', target: "_blank"},
+      link_attributes: { rel: 'nofollow', target: '_blank' },
       space_after_headers: true,
       prettify: true
     }

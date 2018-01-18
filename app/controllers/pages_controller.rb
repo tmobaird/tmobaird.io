@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PagesController < ApplicationController
   def index
     @info = YAML.load_file('app/views/pages/info.yml')
@@ -8,6 +10,5 @@ class PagesController < ApplicationController
     @projects = Project.all
   end
 
-  def contact
-  end
+  def contact; end
 end
