@@ -1,20 +1,23 @@
-require:
-  - rubocop-rspec
+AllCops:
+  Excludes:
+    - db/**
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+   - 'bin/setup'
+   - 'bin/update'
 
 Metrics/LineLength:
-  Max: 100
+  Max: 130
 
 Metrics/MethodLength:
   Max: 15
-
-Lint/AmbiguousBlockAssociation:
-  Exclude:
-    - 'spec/**/*.rb'
-
-Lint/InterpolationCheck:
-  Exclude:
-    - 'spec/**/*.rb'
-
 
 Metrics/BlockLength:
   Exclude:
@@ -23,5 +26,13 @@ Metrics/BlockLength:
     - 'spec/**/*.rb'
 
 Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Lint/InterpolationCheck:
   Exclude:
     - 'spec/**/*.rb'
