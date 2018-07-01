@@ -1,10 +1,10 @@
-@import "bootstrap";
 @import "trix";
 @import "_variables";
 @import "_navbar";
-@import "_bootstrap-overrides";
 @import "_footer";
 @import "projects";
+@import "bootstrap";
+@import "_bootstrap-overrides";
 
 // Used for code block syntax highlighting
 pre {
