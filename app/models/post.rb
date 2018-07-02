@@ -6,6 +6,14 @@ class Post < ApplicationRecord
   validates :title, presence: true
   paginates_per 5
 
+  def tags=(val)
+    write_attribute(:tags, val.gsub(' ', ''))
+  end
+
+  def published?
+    published
+  end
+
   def self.parse_markdown(text)
     renderer = Redcarpet::Render::HTML.new(markdown_options)
     markdown ||= Redcarpet::Markdown.new(renderer, markdown_extensions)
@@ -20,25 +28,21 @@ class Post < ApplicationRecord
     self.where(published: false)
   end
 
-  def published?
-    published
-  end
-
   private
 
   def self.markdown_options
     {
-      filter_html:     true,
+      filter_html: true,
       link_attributes: { rel: 'nofollow', target: "_blank" },
-      space_after_headers: true, 
+      space_after_headers: true,
       prettify: true
     }
   end
 
   def self.markdown_extensions
     {
-      autolink:           true,
-      superscript:        true,
+      autolink: true,
+      superscript: true,
       fenced_code_blocks: true,
       highlight: true
     }

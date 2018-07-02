@@ -1,0 +1,8 @@
+<div class="row" style="padding-left: 15px;">
+  <% unless post.published? %>
+    <span class="badge badge-warning">Draft</span>
+  <% end %>
+  <% if post.created_at >= 1.week.ago.utc %>
+    <span class="badge badge-success">New</span>
+  <% end %>
+</div>
