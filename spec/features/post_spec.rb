@@ -36,26 +36,38 @@ RSpec.feature "Posts" do
         expect(element).to have_selector(".badge", text: "Draft")
       end
     end
+
     describe "Create Post" do
-      before do
+      it "creates and displays a new post", js: true do
+        visit new_post_path
+        fill_in 'post[title]', with: 'My New Post'
+        fill_in 'post[body]', with: 'My New Posts Body'
+        fill_in 'post[tags]', with: 'tag-one; tag-two; tag-three;'
+        click_button 'Create Post'
+
+        expect(page).to have_selector('.alert', text: 'Post was successfully created.')
+        expect(page).to have_selector('h1', text: 'My New Post')
+        expect(page).to have_selector('.post-body-full', text: 'My New Posts Body')
+        expect(page).to have_selector('small', text: "by #{admin.full_name}")
+        tags = page.all('.post-tag')
+        expect(tags.count).to eq(3)
+        expect(tags[0]).to have_text('tag-one')
+        expect(tags[1]).to have_text('tag-two')
+        expect(tags[2]).to have_text('tag-three')
+      end
+
+      it "creates a post and tags it as a draft", js: true do
         visit new_post_path
         fill_in "post[title]", with: "My New Post"
         fill_in "post[body]", with: "My New Posts Body"
-      end
-      it "creates and displays a new post", js: true do
-        click_button "Create Post"
-        expect(page).to have_selector(".alert", text: "Post was successfully created.")
-        expect(page).to have_selector("h1", text: "My New Post")
-        expect(page).to have_selector(".post-body-full", text: "My New Posts Body")
-        expect(page).to have_selector("small", text: "by #{admin.full_name}")
-      end
-      it "creates a post and tags it as a draft", js: true do
         uncheck "post_published"
         click_button "Create Post"
+
         expect(page).to have_selector(".alert", text: "Post was successfully created.")
         expect(page).to have_selector(".badge", text: "Draft")
       end
     end
+
     describe "Edit Post" do
       it "updates and displays a post", js: true do
         post_one = FactoryGirl.create :post

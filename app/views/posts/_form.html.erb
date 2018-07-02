@@ -24,6 +24,19 @@
     </div>
   </div>
 
+  <div class="row" id="tags-input">
+    <div class="form-group">
+      <div class="row">
+        <%= f.label :tags, class: "col-xs-3 control-label" %>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <%= f.text_field :tags, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row" id="body-input">
     <ul class="nav nav-tabs">
       <li class="nav-item"><a class="nav-link active" id="write-tab" href="#write-display" data-toggle="tab">Write</a></li>

@@ -1,15 +1,9 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
   <h1 class="post-title"><%= @post.title %></h1>
-  <div class="row" style="padding-left: 15px;">
-    <% unless @post.published? %>
-      <span class="badge badge-warning">Draft</span>
-    <% end %>
-    <% if @post.created_at >= 1.week.ago.utc %>
-      <span class="badge badge-success">New</span>
-    <% end %>
-  </div>
-  <small><span class="light-text open-sans"><%= @post.updated_at.strftime("%B %e, %Y") %> by <%= @post.admin.full_name %></span></small>
+  <%= render partial: "status_badges", locals: {post: @post} %>
+  <%= render partial: "tags", locals: {tags: @post.tags} %>
+  <%= render partial: "date_and_author", locals: { post: @post } %>
   <hr />
   <div class="post-body-full"><%= @body.html_safe %></div>
   <hr />

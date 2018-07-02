@@ -1,19 +1,15 @@
 <div class="post">
-      <h2 class="post-title"><%= link_to post.title, post_path(post) %></h2>
-      <% unless post.published? %>
-        <span class="badge badge-warning">Draft</span>
-      <% end %>
-      <% if post.created_at >= 1.week.ago.utc %>
-        <span class="badge badge-success">New</span>
-      <% end %>
-      <p class="light-text open-sans"><small><%= post.updated_at.strftime("%B %d, %Y") %> By <%= post.admin.full_name %></small></p>
-      <div class="post-body"><%= Post.parse_markdown(post.body) %></div>
-      <div class="pull-right">
-        <%= link_to 'Read More', post_path(post), class: "btn btn-sm btn-outline-info" %>
-        <% if admin_signed_in? %>
-          <%= link_to 'Edit', edit_post_path(post), class: "btn btn-sm btn-warning" %>
-          <%= link_to 'Destroy', post, method: :delete, class: "btn btn-sm btn-danger", data: { confirm: 'Are you sure?' } %>
-        <% end %>
-      </div>
+  <h2 class="post-title"><%= link_to post.title, post_path(post) %></h2>
+  <%= render partial: "status_badges", locals: { post: post } %>
+  <%= render partial: "tags", locals: {tags: post.tags} %>
+  <%= render partial: "date_and_author", locals: { post: post } %>
+  <div class="post-body"><%= Post.parse_markdown(post.body) %></div>
+  <div class="pull-right">
+    <%= link_to 'Read More', post_path(post), class: "btn btn-sm btn-outline-info" %>
+    <% if admin_signed_in? %>
+      <%= link_to 'Edit', edit_post_path(post), class: "btn btn-sm btn-warning" %>
+      <%= link_to 'Destroy', post, method: :delete, class: "btn btn-sm btn-danger", data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
 </div>
 <hr style="width: 95%;"/>
