@@ -8,10 +8,10 @@
 
 // Used for code block syntax highlighting
 pre {
-  border: 1px solid $prime-blue;
-  background-color: #2D2D2D;
-  padding: 15px;
-  border-radius: 5px;
+  border: 1px solid $prime-blue !important;
+  background-color: #2D2D2D !important;
+  padding: 15px !important;
+  border-radius: 5px !important;
 }
 
 .post-body {
@@ -166,4 +166,9 @@ pre {
 
 #body-input {
   padding-top: 10px;
+}
+
+// Github CSS Overrides
+.markdown-body {
+  font-family: 'Open Sans', sans-serif !important;
 }

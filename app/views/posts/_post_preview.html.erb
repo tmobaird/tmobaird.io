@@ -3,7 +3,9 @@
   <%= render partial: "status_badges", locals: { post: post } %>
   <%= render partial: "tags", locals: {tags: post.tags} %>
   <%= render partial: "date_and_author", locals: { post: post } %>
-  <div class="post-body"><%= Post.parse_markdown(post.body) %></div>
+  <div class="post-body markdown-body">
+    <%= Post.parse_markdown(post.body) %>
+  </div>
   <div class="pull-right">
     <%= link_to 'Read More', post_path(post), class: "btn btn-sm btn-outline-info" %>
     <% if admin_signed_in? %>
