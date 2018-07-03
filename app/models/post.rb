@@ -32,7 +32,7 @@ class Post < ApplicationRecord
 
   def self.markdown_options
     {
-      filter_html: true,
+      filter_html: false,
       link_attributes: { rel: 'nofollow', target: "_blank" },
       space_after_headers: true,
       prettify: true
