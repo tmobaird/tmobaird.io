@@ -158,3 +158,8 @@ $badge-padding-x:             .4em !default;
 .badge-primary {
   background-color: $purple;
 }
+
+// Note: supposed to be in bootstrap 4, but not currently working
+.text-center {
+  text-align: center;
+}
