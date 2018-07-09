@@ -1,19 +1,17 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
+  <%= render partial: "featured_image", locals: { image: @post.featured_image } %>
   <h1 class="post-title"><%= @post.title %></h1>
   <%= render partial: "status_badges", locals: { post: @post } %>
   <%= render partial: "tags", locals: { tags: @post.tags } %>
   <%= render partial: "date_and_author", locals: { post: @post } %>
   <hr/>
   <div class="post-body-full markdown-body">
-    <%= @body.html_safe %>
+    <%= @post.body.html_safe %>
+    <%= @post.inspect %>
   </div>
   <hr/>
   <%= link_to '< Back', posts_path, class: "btn btn-md btn-outline-info" %>
-  <% if admin_signed_in? %>
-    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-md btn-outline-warning" %>
-  <% end %>
-
   <%= render 'disqus' %>
 </div>
 <div class="col-md-2"></div>

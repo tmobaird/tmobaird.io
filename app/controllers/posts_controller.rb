@@ -1,19 +1,30 @@
 class PostsController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    posts = admin_signed_in? ? Post.all : Post.published_posts
-    @posts = posts.order(updated_at: :desc).page params[:page]
+    params[:page] ||= 1
+
+    begin
+      @posts = ButterCMS::Post.all(:page => params[:page], :page_size => 5)
+      @next_page = @posts.meta.next_page
+      @prev_page = @posts.meta.previous_page
+    rescue SocketError
+      @posts = []
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    begin
+      @post = ButterCMS::Post.find(params[:slug])
+    rescue SocketError
+      @post = nil
+    end
     @post_url = "http://www.tmobaird.io/posts/#{@post.slug}"
-    @body = Post.parse_markdown(@post.body)
   end
 
   # GET /posts/new
@@ -74,13 +85,14 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.friendly.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :tags, :body, :published)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.friendly.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:title, :tags, :body, :published)
+  end
 end

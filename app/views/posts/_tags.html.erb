@@ -1,5 +1,5 @@
 <div class="row post-tags" style="padding-left: 15px;">
-  <% (tags || '').split(';').each do |tag| %>
-    <%= render partial: "tag", locals: { name: tag } %>
+  <% tags.each do |tag| %>
+    <%= render partial: "tag", locals: { name: tag["name"] } %>
   <% end %>
 </div>

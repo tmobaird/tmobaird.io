@@ -45,6 +45,7 @@ pre {
     color: $prime-blue;
   }
 }
+
 #contact-me {
   background-color: $blue-green;
   color: black;
@@ -72,13 +73,16 @@ pre {
 .large-header {
   font-size: 15vw;
 }
+
 .medium-header {
   font-size: 9vw;
   color: $prime-blue;
 }
+
 .small-header {
   font-size: 5vw;
 }
+
 .welcome-row {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -171,6 +175,15 @@ pre {
 // Github CSS Overrides
 .markdown-body {
   font-family: 'Open Sans', sans-serif !important;
+}
+
+.featured-image {
+  padding-bottom: 20px;
+
+  img {
+    width: 100%;
+    height: 275px;
+  }
 }
 
 img.center-align {

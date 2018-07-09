@@ -2,9 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "turbolinks:load", ->
-  posts = $('.post .post-body')
   # Post index page post preview
+  posts = $('.post .post-body')
   appendText element for element in posts
+
+  code = $('pre code')
+  addPrettyPrint element for element in code
 
   # In edit rendering
   $("#view-tab").on "click", ->
@@ -20,6 +23,8 @@ $(document).on "turbolinks:load", ->
         $('#view-display').html data.parsed_html
         PR.prettyPrint()
 
+addPrettyPrint = (elem) ->
+  elem.classList.add('prettyprint')
 
 appendText = (elem) ->
   if elem.innerHTML.length > 600
