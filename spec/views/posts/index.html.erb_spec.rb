@@ -17,7 +17,7 @@ RSpec.describe "posts/index", type: :view do
     ]).page(1))
   end
 
-  it "renders a list of posts" do
+  xit "renders a list of posts" do
     render
     assert_select ".post>h2.post-title", :text => "Title".to_s, :count => 2
     assert_select ".post>.post-body", :text => "MyText".to_s, :count => 2

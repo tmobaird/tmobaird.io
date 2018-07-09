@@ -44,22 +44,6 @@ RSpec.describe PostsController, type: :controller do
   # PostsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
-    it "assigns all posts as @posts" do
-      post = Post.create! valid_attributes
-      get :index, params: {}, session: valid_session
-      expect(assigns(:posts)).to eq([post])
-    end
-  end
-
-  describe "GET #show" do
-    it "assigns the requested post as @post" do
-      post = Post.create! valid_attributes
-      get :show, params: {id: post.to_param}, session: valid_session
-      expect(assigns(:post)).to eq(post)
-    end
-  end
-
   describe "Authencation required" do
     before { sign_in(admin) }
     describe "GET #new" do
@@ -72,7 +56,7 @@ RSpec.describe PostsController, type: :controller do
     describe "GET #edit" do
       it "assigns the requested post as @post" do
         post = Post.create! valid_attributes
-        get :edit, params: {id: post.to_param}, session: valid_session
+        get :edit, params: {slug: post.to_param}, session: valid_session
         expect(assigns(:post)).to eq(post)
       end
     end
@@ -118,20 +102,20 @@ RSpec.describe PostsController, type: :controller do
 
         it "updates the requested post" do
           post = Post.create! valid_attributes
-          put :update, params: {id: post.to_param, post: new_attributes}, session: valid_session
+          put :update, params: {slug: post.to_param, post: new_attributes}, session: valid_session
           post.reload
           skip("Add assertions for updated state")
         end
 
         it "assigns the requested post as @post" do
           post = Post.create! valid_attributes
-          put :update, params: {id: post.to_param, post: valid_attributes}, session: valid_session
+          put :update, params: {slug: post.to_param, post: valid_attributes}, session: valid_session
           expect(assigns(:post)).to eq(post)
         end
 
         it "redirects to the post" do
           post = Post.create! valid_attributes
-          put :update, params: {id: post.to_param, post: valid_attributes}, session: valid_session
+          put :update, params: {slug: post.to_param, post: valid_attributes}, session: valid_session
           expect(response).to redirect_to(post)
         end
       end
@@ -139,13 +123,13 @@ RSpec.describe PostsController, type: :controller do
       context "with invalid params" do
         it "assigns the post as @post" do
           post = Post.create! valid_attributes
-          put :update, params: {id: post.to_param, post: invalid_attributes}, session: valid_session
+          put :update, params: {slug: post.to_param, post: invalid_attributes}, session: valid_session
           expect(assigns(:post)).to eq(post)
         end
 
         it "re-renders the 'edit' template" do
           post = Post.create! valid_attributes
-          put :update, params: {id: post.to_param, post: invalid_attributes}, session: valid_session
+          put :update, params: {slug: post.to_param, post: invalid_attributes}, session: valid_session
           expect(response).to render_template("edit")
         end
       end
@@ -155,13 +139,13 @@ RSpec.describe PostsController, type: :controller do
       it "destroys the requested post" do
         post = Post.create! valid_attributes
         expect {
-          delete :destroy, params: {id: post.to_param}, session: valid_session
+          delete :destroy, params: {slug: post.to_param}, session: valid_session
         }.to change(Post, :count).by(-1)
       end
 
       it "redirects to the posts list" do
         post = Post.create! valid_attributes
-        delete :destroy, params: {id: post.to_param}, session: valid_session
+        delete :destroy, params: {slug: post.to_param}, session: valid_session
         expect(response).to redirect_to(posts_url)
       end
     end

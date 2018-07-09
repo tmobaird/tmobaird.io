@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     params[:page] ||= 1
 
     begin
-      @posts = ButterCMS::Post.all(:page => params[:page], :page_size => 5)
+      @posts = ButterCMS::Post.all(page: params[:page], page_size: 5)
       @next_page = @posts.meta.next_page
       @prev_page = @posts.meta.previous_page
     rescue SocketError
@@ -88,7 +88,7 @@ class PostsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_post
-    @post = Post.friendly.find(params[:id])
+    @post = Post.friendly.find(params[:slug])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
