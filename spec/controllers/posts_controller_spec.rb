@@ -100,13 +100,6 @@ RSpec.describe PostsController, type: :controller do
           skip("Add a hash of attributes valid for your model")
         }
 
-        it "updates the requested post" do
-          post = Post.create! valid_attributes
-          put :update, params: {slug: post.to_param, post: new_attributes}, session: valid_session
-          post.reload
-          skip("Add assertions for updated state")
-        end
-
         it "assigns the requested post as @post" do
           post = Post.create! valid_attributes
           put :update, params: {slug: post.to_param, post: valid_attributes}, session: valid_session
@@ -150,5 +143,4 @@ RSpec.describe PostsController, type: :controller do
       end
     end
   end
-
 end

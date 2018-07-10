@@ -71,7 +71,6 @@ RSpec.configure do |config|
 
   # Configuring Database Cleaning Strategy
   config.before(:suite) do
-    FactoryGirl.lint
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.strategy = :transaction
   end

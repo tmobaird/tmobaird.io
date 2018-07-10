@@ -1,7 +1,7 @@
 RSpec.feature "Posts" do
   describe "View Posts" do
-    xit "displays posts" do
-      post_one = FactoryGirl.create(:post, title: "New Post 1", admin: admin)
+    it "displays posts" do
+      allow(ButterCMS::Post).to receive(:all).and_return(FactoryGirl.build(:butter_posts))
       visit posts_path
       expect(page).to have_selector(".post", text: "New Post 1")
     end
