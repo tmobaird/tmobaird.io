@@ -8,9 +8,6 @@
   <%= render partial: "date_and_author", locals: { post: post } %>
   <div class="post-body markdown-body">
     <%= post.body.html_safe %>
-    <p>
-      <%= post.inspect %>
-    </p>
   </div>
   <div class="pull-right">
     <%= link_to 'Read More', post_path(post.slug), class: "btn btn-sm btn-outline-info" %>
