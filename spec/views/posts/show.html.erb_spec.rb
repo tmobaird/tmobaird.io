@@ -1,20 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe "posts/show", type: :view do
-  let(:admin) { FactoryGirl.create :admin }
-  before(:each) do
-    @post = assign(:post, Post.create!(
-      :title => "Title",
-      :body => "MyText",
-      :admin => admin
-    ))
-    @body = "MyText"
-  end
-
   it "renders attributes in <p>" do
+    data = FakeButterPost.attributes(title: 'Title', body: 'Post body', author: {
+      "first_name" => "First",
+      "last_name" => "Last"
+    })
+    post = FactoryGirl.build(:butter_post, data: data)
+    assign(:post, post)
+
     render
-    expect(rendered).to match(/Title/)
-    expect(rendered).to match(/MyText/)
-    expect(rendered).to match(//)
+
+    assert_select "h1.post-title", text: 'Title', count: 1
+    assert_select ".post-body-full", text: 'Post body', count: 1
+    assert_select "small>.light-text", /First Last/
   end
 end

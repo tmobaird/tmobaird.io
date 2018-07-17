@@ -1,8 +1,13 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
   <%= image_tag "code-and-comics-md.png", class: 'blog-banner center-align' %>
-  <p class="lead text-center">Throughout the posts on here, you will find blurbs about an array of different topics. This is because there are many things in my life that I find interesting, and/or things that I wish when I first encountered them, that I would have had some help with. I do not claim to be a genius. In fact I am no such thing. But I am very passionate about a lot of things. One of which is helping others when I have the opportunity to do so. So don't take the words I write as the <i>be-all and end-all</i> of what I talk about. I'm just putting my thoughts and experiences out on the web. And if just one person finds some benefit from it, then I've done my job.</p>
-  <hr />
+  <p class="lead text-center">Throughout the posts on here, you will find blurbs about an array of different topics.
+    This is because there are many things in my life that I find interesting, and/or things that I wish when I first
+    encountered them, that I would have had some help with. I do not claim to be a genius. In fact I am no such thing.
+    But I am very passionate about a lot of things. One of which is helping others when I have the opportunity to do so.
+    So don't take the words I write as the <i>be-all and end-all</i> of what I talk about. I'm just putting my thoughts
+    and experiences out on the web. And if just one person finds some benefit from it, then I've done my job.</p>
+  <hr/>
   <% if @posts.count == 0 %>
     <center>
       <h3>
@@ -17,8 +22,12 @@
   <br>
   <div class="row">
     <div class="btn-group pull-right">
-      <%= link_to_previous_page @posts, '< Newer Posts', class: "btn btn-sm btn-outline-info" %>
-      <%= link_to_next_page @posts, 'Older Posts >', class: "btn btn-sm btn-outline-info" %>
+      <% if @prev_page %>
+        <%= link_to "< Newer Posts", posts_path(:page => @prev_page), class: "btn btn-sm btn-outline-info" %>
+      <% end %>
+      <% if @next_page %>
+        <%= link_to "Older Posts >", posts_path(:page => @next_page), class: "btn btn-sm btn-outline-info" %>
+      <% end %>
     </div>
   </div>
   <% if admin_signed_in? %>

@@ -1,5 +1,5 @@
 <small>
   <span class="light-text open-sans">
-    <%= post.updated_at.strftime("%B %e, %Y") %> by <%= post.admin.full_name %>
+    <%= post.published.to_date.inspect %> by <%= "#{post.author.first_name} #{post.author.last_name}" %>
   </span>
 </small>
